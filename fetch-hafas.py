@@ -7,6 +7,7 @@ from typing import List, Tuple
 import json
 import sqlite3
 import re
+from hashlib import sha256
 
 from pyhafas import HafasClient
 from pyhafas.profile import DBProfile
@@ -68,7 +69,7 @@ def mode_to_route_type(mode):
 
 
 def service_id(trip_id):
-    return hash("service" + trip.id)
+    return sha256(("service" + trip.id).encode()).hexdigest()
 
 
 def clean_name(db_name):
@@ -142,8 +143,8 @@ for departure in departures:
         (trip.name, trip.name, mode_to_route_type(trip.mode)),
     )
     cur.execute(
-        """insert or replace into trips values (?, ?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)""",
-        (trip.name, service_id(trip.id), hash(trip.id)),
+        """insert or replace into trips values (?, ?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL)""",
+        (trip.name, service_id(trip.id), sha256(trip.id.encode()).hexdigest()),
     )
 
     if trip.cancelled:
@@ -188,7 +189,7 @@ for departure in departures:
         cur.execute(
             """insert or replace into stop_times values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
-                hash(trip.id),
+                sha256(trip.id.encode()).hexdigest(),
                 time_to_gtfs(
                     trip.departure.date(),
                     stopover.arrival if stopover.arrival else stopover.departure,
