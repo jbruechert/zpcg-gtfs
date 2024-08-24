@@ -12,6 +12,7 @@ from hashlib import sha256
 from pyhafas import HafasClient
 from pyhafas.profile import DBProfile
 from pyhafas.types.fptf import Leg, Mode
+from pyhafas.types.exceptions import GeneralHafasError
 
 
 def prepare_database():
@@ -115,102 +116,114 @@ except FileNotFoundError:
 
 print(f"Starting at {latest_time}")
 
-departures: List[Leg] = client.departures(
-    station=best_found_location.id,
-    date=latest_time,
-    max_trips=600,
-    products={
-        "long_distance_express": True,
-        "regional_express": True,
-        "regional": True,
-        "suburban": True,
-        "bus": False,
-        "ferry": False,
-        "subway": False,
-        "tram": False,
-        "taxi": False,
-    },
-)
+# Try to fetch until
+while True:
+    departures: List[Leg] = []
+    try:
+        departures = client.departures(
+            station=best_found_location.id,
+            date=latest_time,
+            max_trips=600,
+            products={
+                "long_distance_express": True,
+                "regional_express": True,
+                "regional": True,
+                "suburban": True,
+                "bus": False,
+                "ferry": False,
+                "subway": False,
+                "tram": False,
+                "taxi": False,
+            },
+        )
+    except GeneralHafasError as e:
+        print("Stopping because of", e)
 
-cur.execute(
-    """insert or replace into agencies values ("zpcg", "Željeznički prevoz Crne Gore", "https://zpgc.me", "Europe/Berlin", "+382 20 441 197", NULL, "info@zpcg.me")"""
-)
+        if departures:
+            with open("latest_timestamp.txt", "w") as tf:
+                tf.write(f"{int(departures[-1].dateTime.timestamp())}")
 
-for departure in departures:
-    trip = client.trip(departure.id)
+        break
+
     cur.execute(
-        """insert or replace into routes values (?, "zpcg", ?, NULL, NULL, ?, NULL, NULL, NULL, NULL)""",
-        (trip.name, trip.name, mode_to_route_type(trip.mode)),
-    )
-    cur.execute(
-        """insert or replace into trips values (?, ?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL)""",
-        (trip.name, service_id(trip.id), sha256(trip.id.encode()).hexdigest()),
+        """insert or replace into agencies values ("zpcg", "Željeznički prevoz Crne Gore", "https://zpgc.me", "Europe/Berlin", "+382 20 441 197", NULL, "info@zpcg.me")"""
     )
 
-    if trip.cancelled:
+    for departure in departures:
+        trip = client.trip(departure.id)
         cur.execute(
-            """insert or replace into calendar_dates values (?, ?, ?)""",
-            (service_id(trip.id), trip.departure.date().strftime("%Y%m%d"), 0),
+            """insert or replace into routes values (?, "zpcg", ?, NULL, NULL, ?, NULL, NULL, NULL, NULL)""",
+            (trip.name, trip.name, mode_to_route_type(trip.mode)),
         )
-    else:
         cur.execute(
-            """insert or replace into calendar_dates values (?, ?, ?)""",
-            (service_id(trip.id), trip.departure.date().strftime("%Y%m%d"), 1),
+            """insert or replace into trips values (?, ?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL)""",
+            (trip.name, service_id(trip.id), sha256(trip.id.encode()).hexdigest()),
         )
 
-    sequence = 1
-    for stopover in trip.stopovers:
-        station_metadata = search_station(
-            stations, stopover.stop.latitude, stopover.stop.longitude
-        )
-        name = (station_name_fallback(station_metadata))
-        if name.startswith("["):
-            print(name)
-        cur.execute(
-            """insert or replace into stops values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            (
-                stopover.stop.id,
-                None,
-                station_name_fallback(station_metadata),
-                None,
-                None,
-                station_metadata["geometry"]["coordinates"][1],
-                station_metadata["geometry"]["coordinates"][0],
-                None,
-                None,
-                0,
-                None,
-                "Europe/Podgorica",
-                None,
-                None,
-                None,
-            ),
-        )
-        cur.execute(
-            """insert or replace into stop_times values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            (
-                sha256(trip.id.encode()).hexdigest(),
-                time_to_gtfs(
-                    trip.departure.date(),
-                    stopover.arrival if stopover.arrival else stopover.departure,
+        if trip.cancelled:
+            cur.execute(
+                """insert or replace into calendar_dates values (?, ?, ?)""",
+                (service_id(trip.id), trip.departure.date().strftime("%Y%m%d"), 0),
+            )
+        else:
+            cur.execute(
+                """insert or replace into calendar_dates values (?, ?, ?)""",
+                (service_id(trip.id), trip.departure.date().strftime("%Y%m%d"), 1),
+            )
+
+        sequence = 1
+        for stopover in trip.stopovers:
+            station_metadata = search_station(
+                stations, stopover.stop.latitude, stopover.stop.longitude
+            )
+            name = (station_name_fallback(station_metadata))
+            if name.startswith("["):
+                print(name)
+            cur.execute(
+                """insert or replace into stops values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    stopover.stop.id,
+                    None,
+                    station_name_fallback(station_metadata),
+                    None,
+                    None,
+                    station_metadata["geometry"]["coordinates"][1],
+                    station_metadata["geometry"]["coordinates"][0],
+                    None,
+                    None,
+                    0,
+                    None,
+                    "Europe/Podgorica",
+                    None,
+                    None,
+                    None,
                 ),
-                time_to_gtfs(
-                    trip.departure.date(),
-                    stopover.departure if stopover.departure else stopover.arrival,
+            )
+            cur.execute(
+                """insert or replace into stop_times values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    sha256(trip.id.encode()).hexdigest(),
+                    time_to_gtfs(
+                        trip.departure.date(),
+                        stopover.arrival if stopover.arrival else stopover.departure,
+                    ),
+                    time_to_gtfs(
+                        trip.departure.date(),
+                        stopover.departure if stopover.departure else stopover.arrival,
+                    ),
+                    stopover.stop.id,
+                    None,
+                    None,
+                    sequence,
+                    None,
+                    None,
+                    None,
+                    None,
                 ),
-                stopover.stop.id,
-                None,
-                None,
-                sequence,
-                None,
-                None,
-                None,
-                None,
-            ),
-        )
-        sequence += 1
+            )
+            sequence += 1
+
+    latest_time = departures[-1].dateTime
+    print(f"Fetched until {latest_time}")
 
 db.commit()
-
-with open("latest_timestamp.txt", "w") as tf:
-    tf.write(f"{int(departures[-1].dateTime.timestamp())}")

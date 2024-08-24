@@ -1,0 +1,18 @@
+update-feed:
+    image: docker.io/python
+    before_script:
+        - wget https://github.com/public-transport/gtfsclean/releases/download/snapshot-3/gtfsclean -O /usr/local/bin/gtfsclean
+        - chmod +x /usr/local/bin/gtfsclean
+        - pip3 install -r requirements.txt
+        - apt-get update
+        - apt-get install zip sqlite3 -y
+    script:
+        - ./update-feed.sh
+    cache:
+        key: database
+        paths:
+            - gtfs.sqlite
+            - latest_timestamp.txt
+    artifacts:
+        paths:
+            - me_zpcg.gtfs.zip
