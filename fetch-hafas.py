@@ -138,6 +138,24 @@ while True:
                 "taxi": False,
             },
         )
+        latest_departure = departures[-1].dateTime
+        departures += client.arrivals(
+            station=best_found_location.id,
+            date=latest_time,
+            max_trips=600,
+            products={
+                "long_distance_express": True,
+                "regional_express": True,
+                "regional": True,
+                "suburban": True,
+                "bus": False,
+                "ferry": False,
+                "subway": False,
+                "tram": False,
+                "taxi": False,
+            },
+        )
+        latest_arrival = departures[-1].dateTime
 
         cur.execute(
             """insert or replace into agencies values ("zpcg", "Željeznički prevoz Crne Gore", "https://zpgc.me", "Europe/Berlin", "+382 20 441 197", NULL, "info@zpcg.me")"""
@@ -217,19 +235,19 @@ while True:
                 )
                 sequence += 1
 
+        latest_time = min(latest_departure, latest_arrival)
+        print(f"Fetched until {latest_time}")
+
     except (GeneralHafasError, KeyboardInterrupt) as e:
         print("Stopping because of", e)
 
         if departures:
             with open("latest_timestamp.txt", "w") as tf:
-                tf.write(f"{int(departures[-1].dateTime.timestamp())}")
+                tf.write(f"{latest_time}")
 
         pass
         break
 
-
-    latest_time = departures[-1].dateTime
-    print(f"Fetched until {latest_time}")
 
 print("Writing changes to database…")
 db.commit()
