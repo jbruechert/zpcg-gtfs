@@ -122,7 +122,7 @@ print(f"Starting at {latest_time}")
 while True:
     departures: List[Leg] = []
     try:
-        departures = client.departures(
+        args = dict(
             station=best_found_location.id,
             date=latest_time,
             max_trips=600,
@@ -136,25 +136,11 @@ while True:
                 "subway": False,
                 "tram": False,
                 "taxi": False,
-            },
+            }
         )
+        departures = client.departures(**args)
         latest_departure = departures[-1].dateTime
-        departures += client.arrivals(
-            station=best_found_location.id,
-            date=latest_time,
-            max_trips=600,
-            products={
-                "long_distance_express": True,
-                "regional_express": True,
-                "regional": True,
-                "suburban": True,
-                "bus": False,
-                "ferry": False,
-                "subway": False,
-                "tram": False,
-                "taxi": False,
-            },
-        )
+        departures += client.arrivals(**args)
         latest_arrival = departures[-1].dateTime
 
         cur.execute(
