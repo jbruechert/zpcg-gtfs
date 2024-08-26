@@ -119,8 +119,8 @@ except FileNotFoundError:
 print(f"Starting at {latest_time}")
 
 # Try to fetch until
+departures: List[Leg] = []
 while True:
-    departures: List[Leg] = []
     try:
         args = dict(
             station=best_found_location.id,
