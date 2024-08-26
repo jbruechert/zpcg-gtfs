@@ -229,7 +229,7 @@ while True:
 
         if departures:
             with open("latest_timestamp.txt", "w") as tf:
-                tf.write(f"{latest_time.timestamp()}")
+                tf.write(f"{int(latest_time.timestamp())}")
 
         pass
         break
