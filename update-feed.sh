@@ -15,4 +15,4 @@ cat ../dump.sql | sqlite3 ../gtfs.sqlite
 zip gtfs.zip *.txt
 
 # Minify the resulting feed
-gtfsclean --minimize-services --minimize-stoptimes --remove-red-routes --remove-red-services --remove-red-trips --non-overlapping-services --explicit-calendar --minimize-ids-char --keep-station-ids gtfs.zip --output ../me_zpcg.gtfs.zip
+gtfsclean --minimize-services --minimize-stoptimes --remove-red-routes --remove-red-services --remove-red-trips --red-trips-fuzzy --non-overlapping-services --explicit-calendar --minimize-ids-char --keep-station-ids gtfs.zip --output ../me_zpcg.gtfs.zip
