@@ -156,7 +156,7 @@ while True:
         latest_arrival = departures[-1].dateTime
 
         cur.execute(
-            """insert or replace into agencies values ("zpcg", "Željeznički prevoz Crne Gore", "https://zpgc.me", "Europe/Berlin", "+382 20 441 197", NULL, "info@zpcg.me")"""
+            """insert or replace into agencies values ("zpcg", "Željeznički prevoz Crne Gore", "https://zpcg.me", "Europe/Berlin", "+382 20 441 197", NULL, "info@zpcg.me")"""
         )
 
         for departure in departures:
