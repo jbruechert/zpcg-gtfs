@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 import datetime
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 import json
 import sqlite3
 import re
@@ -63,12 +63,28 @@ def search_station(stations, lat: float, lon: float):
 
     raise StationNotFoundException(f"Station at {lat}, {lon} not found in OpenStreetMap data")
 
-def mode_to_route_type(mode):
+def mode_to_route_type(mode, route_type: Optional[str]):
     match mode:
         case Mode.BUS:
             return 3
         case Mode.TRAIN:
-            return 2
+            match route_type:
+                case "R":
+                    return 106
+                case "E":
+                    return 106
+                case "IC":
+                    return 102
+                case "EC":
+                    return 102
+                case "D":
+                    return 102
+                case None:
+                    return 2
+                case _:
+                    print("Unknown train type", route_type)
+                    return 2
+
 
     raise Exception("Unknown mode")
 
@@ -77,11 +93,12 @@ def service_id(trip_id):
     return sha256(("service" + trip.id).encode()).hexdigest()
 
 
-def clean_trip_name(name: str):
-    if name.startswith("R") or name.startswith("D"):
-        return name[2:]
+def split_trip_name(name: str) -> Tuple[Optional[str], str]:
+    parts = name.split(" ")
+    if len(parts) >= 2 and parts[0].isalpha():
+        return (parts[0], "".join(parts[1:]))
     else:
-        return name
+        return (None, name)
 
 def time_to_gtfs(start_date, time):
     rel_time = time - datetime.datetime.combine(
@@ -161,13 +178,14 @@ while True:
 
         for departure in departures:
             trip = client.trip(departure.id)
+            route_type, trip_name = split_trip_name(trip.name)
             cur.execute(
                 """insert or replace into routes values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (trip.name, "zpcg", clean_trip_name(trip.name), None, None, mode_to_route_type(trip.mode), None, None, None, None),
+                (trip.name, "zpcg", trip_name, None, None, mode_to_route_type(trip.mode, route_type), None, None, None, None),
             )
             cur.execute(
                 """insert or replace into trips values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (trip.name, service_id(trip.id), sha256(trip.id.encode()).hexdigest(), None, clean_trip_name(trip.name), None, None, None, None, None),
+                (trip.name, service_id(trip.id), sha256(trip.id.encode()).hexdigest(), None, trip_name, None, None, None, None, None),
             )
 
             if trip.cancelled:
