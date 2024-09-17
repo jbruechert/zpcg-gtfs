@@ -12,7 +12,7 @@ update-feed:
         key: database
         paths:
             - gtfs.sqlite
-            - latest_timestamp.txt
+            - latest_timestamp_Podgorica.txt
     artifacts:
         paths:
             - me_zpcg.gtfs.zip
