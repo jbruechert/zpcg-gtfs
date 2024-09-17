@@ -8,6 +8,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 This repository contains scripts to fetch the timetable from the Deutsche Bahn API, augment it with OpenStreetMap data and generate a GTFS feed from it.
 
+The resulting feed can be found at [jbb.ghsq.de/gtfs/me-zpcg.gtfs.zip](https://jbb.ghsq.de/gtfs/me-zpcg.gtfs.zip)
+
 ## Dependencies
 
 To run the `update-feed.sh` script, you need
