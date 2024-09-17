@@ -6,8 +6,12 @@
 
 set -e
 
-# Import data from the DB API into the SQLite database
-python3 fetch-hafas.py
+for station in "Podgorica"; do
+    echo "# Fetching data for $station"
+
+    # Import data from the DB API into the SQLite database
+    python3 fetch-hafas.py "$station"
+done
 
 # Create a GTFS feed from the SQLite database
 mkdir -p out; cd out

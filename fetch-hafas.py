@@ -7,6 +7,7 @@ from typing import List, Tuple
 import json
 import sqlite3
 import re
+import sys
 from hashlib import sha256
 
 from pyhafas import HafasClient
@@ -42,6 +43,8 @@ def get_stations():
 def distance(a: Tuple[float, float], b: Tuple[float, float]):
     return (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2
 
+class StationNotFoundException(Exception):
+    pass
 
 def search_station(stations, lat: float, lon: float):
     for station in stations:
@@ -57,7 +60,7 @@ def search_station(stations, lat: float, lon: float):
         ) and not "abandoned:railway" in station["properties"]:
             return station
 
-    raise Exception("Station not found")
+    raise StationNotFoundException(f"Station at {lat}, {lon} not found in OpenStreetMap data")
 
 def mode_to_route_type(mode):
     match mode:
@@ -89,7 +92,6 @@ def time_to_gtfs(start_date, time):
     )
     return result
 
-
 def station_name_fallback(station):
     priority = ["name:sr-Latn", "name:en", "name"]
 
@@ -106,11 +108,15 @@ stations = get_stations()
 
 client = HafasClient(DBProfile())
 
-locations = client.locations("Podgorica")
+search_name = sys.argv[1]
+
+locations = client.locations(search_name)
 best_found_location = locations[0]
 
+timestamp_file = f"latest_timestamp_{search_name}.txt"
+
 try:
-    with open("latest_timestamp.txt", "r") as tf:
+    with open(timestamp_file, "r") as tf:
         timestamp = int(tf.read())
         latest_time = datetime.datetime.fromtimestamp(timestamp)
 except FileNotFoundError:
@@ -171,22 +177,29 @@ while True:
 
             sequence = 1
             for stopover in trip.stopovers:
-                station_metadata = search_station(
-                    stations, stopover.stop.latitude, stopover.stop.longitude
-                )
-                name = (station_name_fallback(station_metadata))
-                if name.startswith("["):
-                    print(name)
+                try:
+                    station_metadata = search_station(
+                        stations, stopover.stop.latitude, stopover.stop.longitude
+                    )
+                    name = station_name_fallback(station_metadata)
+                    lat = station_metadata["geometry"]["coordinates"][1]
+                    lon = station_metadata["geometry"]["coordinates"][0]
+                except StationNotFoundException:
+                    print(f"Did not find {stopover.stop.name} in OSM data near {stopover.stop.latitude}, {stopover.stop.longitude}")
+                    name = stopover.stop.name
+                    lat = stopover.stop.latitude
+                    lon = stopover.stop.longitude
+
                 cur.execute(
                     """insert or replace into stops values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                     (
                         stopover.stop.id,
                         None,
-                        station_name_fallback(station_metadata),
+                        name,
                         None,
                         None,
-                        station_metadata["geometry"]["coordinates"][1],
-                        station_metadata["geometry"]["coordinates"][0],
+                        lat,
+                        lon,
                         None,
                         None,
                         0,
@@ -224,13 +237,13 @@ while True:
         latest_time = min(latest_departure, latest_arrival)
         print(f"Fetched until {latest_time}")
 
-    except (GeneralHafasError, KeyboardInterrupt) as e:
-        print("Stopping because of", e)
-
         if departures:
-            with open("latest_timestamp.txt", "w") as tf:
+            with open(timestamp_file, "w") as tf:
                 tf.write(f"{int(latest_time.timestamp())}")
 
+
+    except (GeneralHafasError, KeyboardInterrupt) as e:
+        print("Stopping because of", e)
         pass
         break
 
