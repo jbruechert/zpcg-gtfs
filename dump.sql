@@ -12,3 +12,5 @@ select * from agencies;
 select * from stop_times;
 .output calendar_dates.txt
 select * from calendar_dates;
+.output feed_info.txt
+select * from feed_info;

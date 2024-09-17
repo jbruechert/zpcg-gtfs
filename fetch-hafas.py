@@ -26,6 +26,7 @@ def prepare_database():
     CREATE TABLE IF NOT EXISTS `stops` (`stop_id` text PRIMARY KEY NOT NULL, `stop_code` text DEFAULT NULL, `stop_name` text NOT NULL, `tts_stop_name` text DEFAULT NULL, `stop_desc` text DEFAULT NULL, `stop_lat` real NOT NULL, `stop_lon` real NOT NULL, `zone_id` text DEFAULT NULL, `stop_url` text DEFAULT NULL, `location_type` integer DEFAULT NULL, `parent_station` text DEFAULT NULL, `stop_timezone`, `wheelchair_boarding` integer DEFAULT NULL, `level_id` text DEFAULT NULL, `platform_code` text DEFAULT NULL);
     CREATE TABLE IF NOT EXISTS `stop_times` (`trip_id` text NOT NULL, `arrival_time` text DEFAULT NULL, `departure_time` text DEFAULT NULL, `stop_id` text NOT NULL, `location_group_id` text, `location_id` text, `stop_sequence` smallint NOT NULL, `stop_headsign` text DEFAULT NULL, `pickup_type` integer DEFAULT NULL, `drop_off_type` integer DEFAULT NULL, `timepoint` integer DEFAULT NULL, PRIMARY KEY(`trip_id`, `stop_sequence`));
     CREATE TABLE IF NOT EXISTS `trips` (`route_id` text NOT NULL, `service_id` text NOT NULL, `trip_id` text PRIMARY KEY NOT NULL, `trip_headsign` text DEFAULT NULL, `trip_short_name` text DEFAULT NULL, `direction_id` integer DEFAULT NULL, `block_id` text DEFAULT NULL, `shape_id` text DEFAULT NULL, `wheelchair_accessible` integer DEFAULT NULL, `bikes_allowed` integer DEFAULT NULL);
+    CREATE TABLE IF NOT EXISTS `feed_info` (`feed_publisher_name` text NOT NULL, `feed_publisher_url` text NOT NULL, `feed_lang` text NOT NULL, `feed_contact_email` text);
     """
     )
     return (db, cur)
@@ -124,7 +125,12 @@ except FileNotFoundError:
 
 print(f"Starting at {latest_time}")
 
-# Try to fetch until
+
+cur.execute(
+    """insert or replace into feed_info values ("Jonah Brüchert", "https://jbb.ghsq.de", "cnr", "jbb@kaidan.im")"""
+)
+
+# Try to fetch until hafas complains
 departures: List[Leg] = []
 while True:
     try:
@@ -156,12 +162,12 @@ while True:
         for departure in departures:
             trip = client.trip(departure.id)
             cur.execute(
-                """insert or replace into routes values (?, "zpcg", ?, NULL, NULL, ?, NULL, NULL, NULL, NULL)""",
-                (trip.name, clean_trip_name(trip.name), mode_to_route_type(trip.mode)),
+                """insert or replace into routes values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (trip.name, "zpcg", clean_trip_name(trip.name), None, None, mode_to_route_type(trip.mode), None, None, None, None),
             )
             cur.execute(
-                """insert or replace into trips values (?, ?, ?, NULL, ?, NULL, NULL, NULL, NULL, NULL)""",
-                (trip.name, service_id(trip.id), sha256(trip.id.encode()).hexdigest(), clean_trip_name(trip.name)),
+                """insert or replace into trips values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (trip.name, service_id(trip.id), sha256(trip.id.encode()).hexdigest(), None, clean_trip_name(trip.name), None, None, None, None, None),
             )
 
             if trip.cancelled:
@@ -229,7 +235,7 @@ while True:
                         None,
                         None,
                         None,
-                        None,
+                        1,  # exact times
                     ),
                 )
                 sequence += 1
