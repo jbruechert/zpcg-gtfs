@@ -13,7 +13,7 @@ update-feed:
         - apt-get update
         - apt-get install zip sqlite3 libzip4 bzip2 -y
     script:
-        - ./update-feed.sh
+        - ./update-feed.py
     cache:
         key: database
         paths:
