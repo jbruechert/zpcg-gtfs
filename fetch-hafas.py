@@ -181,7 +181,7 @@ while True:
             route_type, trip_name = split_trip_name(trip.name)
             cur.execute(
                 """insert or replace into routes values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (trip.name, "zpcg", trip_name, None, None, mode_to_route_type(trip.mode, route_type), None, None, None, None),
+                (trip.name, "zpcg", trip_name, None, None, mode_to_route_type(trip.mode, route_type), None, "D82234", "F6F6F6", None),
             )
             cur.execute(
                 """insert or replace into trips values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
