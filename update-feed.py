@@ -186,13 +186,21 @@ for search_name in ["Podgorica"]:
             for departure in departures:
                 trip = client.trip(departure.id)
                 (route_type, trip_name) = split_trip_name(trip.name)
+
+                start = search_station(
+                    stations, trip.stopovers[0].stop.latitude, trip.stopovers[0].stop.longitude
+                )
+                dest = search_station(
+                    stations, trip.stopovers[-1].stop.latitude, trip.stopovers[-1].stop.longitude
+                )
+
                 cur.execute(
                     """insert or replace into routes values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                     (
                         trip.name,
                         "zpcg",
-                        trip_name,
                         None,
+                        f"{station_name_fallback(start)} - {station_name_fallback(dest)}",
                         None,
                         mode_to_route_type(trip.mode, route_type),
                         None,
