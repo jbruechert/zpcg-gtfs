@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2024-09-24T10:32:59Z",
+  "timestamp": "2024-09-24T20:47:45Z",
   "features": [
     {
       "type": "Feature",
@@ -5536,6 +5536,7 @@
         "name": "Zlatica",
         "name:sr": "Златица",
         "railway": "halt",
+        "ref:ibnr": "6231313",
         "wikidata": "Q111993513"
       },
       "geometry": {
@@ -6650,7 +6651,9 @@
         "@id": "node/312404997",
         "name": "Žari",
         "name:sr": "Жари",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "6231321",
+        "wikidata": "Q111995745"
       },
       "geometry": {
         "type": "Point",
@@ -10598,6 +10601,7 @@
         "name:sr": "Биоче",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231312",
         "wheelchair": "no",
         "wikidata": "Q31182472"
       },
@@ -10618,6 +10622,7 @@
         "name:sr": "Братоножићи",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231311",
         "wikidata": "Q31182489"
       },
       "geometry": {
@@ -10638,6 +10643,7 @@
         "operator": "ŽPCG",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231310",
         "wikidata": "Q31182488"
       },
       "geometry": {
@@ -10698,6 +10704,7 @@
         "name:sr": "Мојковац",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231305",
         "wheelchair": "no",
         "wikidata": "Q31182435"
       },
@@ -10718,6 +10725,7 @@
         "name": "Štitarička Rijeka",
         "name:sr": "Штитаричка Ријека",
         "railway": "halt",
+        "ref:ibnr": "6231317",
         "wikidata": "Q111995724"
       },
       "geometry": {
@@ -10736,6 +10744,7 @@
         "name": "Oblutak",
         "name:sr": "Облутак",
         "railway": "halt",
+        "ref:ibnr": "6231322",
         "wikidata": "Q111995718"
       },
       "geometry": {
@@ -26352,6 +26361,7 @@
         "name": "Lješnica",
         "name:sr": "Љешница",
         "railway": "halt",
+        "ref:ibnr": "6231323",
         "wikidata": "Q111995814"
       },
       "geometry": {
@@ -29262,7 +29272,9 @@
         "name": "Kruševo",
         "name:sr": "Крушево",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "ref:ibnr": "6231303",
+        "wikidata": "Q31182436"
       },
       "geometry": {
         "type": "Point",
@@ -29525,6 +29537,7 @@
         "name:sr": "Врањина",
         "public_transport": "station",
         "railway": "halt",
+        "ref:ibnr": "6231005",
         "train": "yes"
       },
       "geometry": {
@@ -34774,7 +34787,9 @@
         "name:sr": "Црмница",
         "public_transport": "station",
         "railway": "halt",
-        "train": "yes"
+        "ref:ibnr": "6231007",
+        "train": "yes",
+        "wikidata": "Q111993445"
       },
       "geometry": {
         "type": "Point",
@@ -34828,7 +34843,8 @@
         "@id": "node/1846494328",
         "name": "Morača",
         "name:sr": "Морача",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "6231003"
       },
       "geometry": {
         "type": "Point",
@@ -34849,6 +34865,7 @@
         "operator": "ŽICG",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231309",
         "wikidata": "Q31182490"
       },
       "geometry": {
@@ -34867,6 +34884,7 @@
         "name": "Kruševački Potok",
         "name:sr": "Крушевачки Поток",
         "railway": "halt",
+        "ref:ibnr": "6231319",
         "wikidata": "Q111995301"
       },
       "geometry": {
@@ -34886,6 +34904,7 @@
         "name:sr": "Кос",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231308",
         "wikidata": "Q31182441"
       },
       "geometry": {
@@ -34904,6 +34923,7 @@
         "name": "Selište",
         "name:sr": "Селиште",
         "railway": "halt",
+        "ref:ibnr": "6231316",
         "wikidata": "Q111995310"
       },
       "geometry": {
@@ -34923,6 +34943,7 @@
         "name:sr": "Мијатово Коло",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231304",
         "wikidata": "Q31182471"
       },
       "geometry": {
@@ -34940,7 +34961,9 @@
         "@id": "node/1846527787",
         "name": "Ravna Rijeka",
         "name:sr": "Равна Ријека",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "6231320",
+        "wikidata": "Q111995796"
       },
       "geometry": {
         "type": "Point",
@@ -37339,7 +37362,9 @@
         "@id": "node/2431193290",
         "name": "Slijepač Most",
         "name:sr": "Слијепач Мост",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "6231324",
+        "wikidata": "Q111995791"
       },
       "geometry": {
         "type": "Point",
@@ -41238,6 +41263,7 @@
         "name:sr": "Требаљево",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231306",
         "wikidata": "Q31182475"
       },
       "geometry": {
@@ -41257,6 +41283,7 @@
         "name:sr": "Колашин",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231307",
         "wheelchair": "no",
         "wikidata": "Q31182442"
       },
@@ -41276,6 +41303,7 @@
         "name": "Padež",
         "name:sr": "Падеж",
         "railway": "halt",
+        "ref:ibnr": "6231315",
         "wikidata": "Q111995713"
       },
       "geometry": {
@@ -41294,6 +41322,7 @@
         "name": "Mateševo",
         "name:sr": "Матешево",
         "railway": "halt",
+        "ref:ibnr": "6231314",
         "wikidata": "Q111995324"
       },
       "geometry": {
@@ -45684,6 +45713,7 @@
       "properties": {
         "@id": "node/6140811391",
         "addr:city": "Beograd",
+        "alt_name": "Beograd Centar-Prokop",
         "alt_name:en": "Belgrade Centre",
         "level": "1",
         "loc_name": "Прокоп",
@@ -49655,6 +49685,7 @@
         "name:sr": "Сутоморе",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6294147",
         "train": "yes",
         "wheelchair": "no",
         "wikidata": "Q3971060",
@@ -49679,6 +49710,7 @@
         "operator": "ZPCG",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231302",
         "train": "yes",
         "wikidata": "Q31182437"
       },
@@ -49699,6 +49731,7 @@
         "name:sr": "Бар",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231080",
         "train": "yes",
         "uic_ref": "7231080",
         "wheelchair": "limited",
@@ -49720,6 +49753,7 @@
         "name": "Aerodrom",
         "name:sr": "Аеродром",
         "railway": "halt",
+        "ref:ibnr": "6231011",
         "wikidata": "Q111993492"
       },
       "geometry": {
@@ -62084,7 +62118,12 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Kenderes mh. ipvk.",
-        "uic_ref": "5512351"
+        "railway:ref": "KD",
+        "uic_ref": "5512351",
+        "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/kenderes",
+        "wheelchair": "no",
+        "wikidata": "Q22047677",
+        "wikipedia": "hu:Kenderes megállóhely"
       },
       "geometry": {
         "type": "Point",
