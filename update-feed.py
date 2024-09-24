@@ -9,6 +9,8 @@ import json
 import sqlite3
 import subprocess
 import os
+import tomllib
+import sys
 from hashlib import sha256
 from pathlib import Path
 
@@ -126,8 +128,11 @@ def station_name_fallback(station):
 
     raise Exception(f"No matching property found in {station["properties"]}")
 
+with open(sys.argv[1], "rb") as cf:
+    config = tomllib.load(cf)
+    print(config)
 
-for search_name in ["Podgorica"]:
+for search_name in config["data"]["stations"]:
     print(f"# Fetching data for {search_name}")
 
     (db, cur) = prepare_database()
@@ -179,8 +184,10 @@ for search_name in ["Podgorica"]:
             departures += client.arrivals(**args)
             latest_arrival = departures[-1].dateTime
 
+            operator_config=config["operator"]
             cur.execute(
-                """insert or replace into agencies values ("zpcg", "Željeznički prevoz Crne Gore", "https://zpcg.me", "Europe/Berlin", "+382 20 441 197", NULL, "info@zpcg.me")"""
+                """insert or replace into agencies values ("operator", ?, ?, "Europe/Berlin", ?, NULL, ?)""",
+                (operator_config["name"], operator_config["url"], operator_config["phone"], operator_config["email"])
             )
 
             for departure in departures:
@@ -198,14 +205,14 @@ for search_name in ["Podgorica"]:
                     """insert or replace into routes values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                     (
                         trip.name,
-                        "zpcg",
+                        "operator",
                         None,
                         f"{station_name_fallback(start)} - {station_name_fallback(dest)}",
                         None,
                         mode_to_route_type(trip.mode, route_type),
                         None,
-                        "D82234",
-                        "F6F6F6",
+                        operator_config["color"],
+                        operator_config["text_color"],
                         None,
                     ),
                 )
@@ -267,7 +274,7 @@ for search_name in ["Podgorica"]:
                             None,
                             0,
                             None,
-                            "Europe/Podgorica",
+                            config["data"]["timezone"],
                             None,
                             None,
                             None,
@@ -372,10 +379,10 @@ subprocess.check_call(
         "--delete-orphans",
         "gtfs.zip",
         "--output",
-        "../me_zpcg.gtfs.zip",
+        "../" + config["output"]["filename"],
     ],
     cwd="out"
 )
 
-subprocess.check_call(["pfaedle", "--inplace", "-x", "zpcg-routes.osm.bz2", "me_zpcg.gtfs.zip"])
-subprocess.check_call(["gtfsclean", "me_zpcg.gtfs.zip", "-o", "me_zpcg.gtfs.zip"])
+subprocess.check_call(["pfaedle", "--inplace", "-x", config["data"]["osm_shapes"], config["output"]["filename"]])
+subprocess.check_call(["gtfsclean", config["output"]["filename"], "-o", config["output"]["filename"]])
