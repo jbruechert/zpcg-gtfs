@@ -1,4 +1,4 @@
-update-feed:
+update-zpcg-feed:
     image: docker.io/python
     before_script:
         - wget "https://dl.dropboxusercontent.com/scl/fi/4rsuauf564byg7mj9teir/zpcg-routes.osm.bz2?rlkey=re7pmlogsc5f6eif7f3culon6&st=5srptuy3&dl=0" -O zpcg-routes.osm.bz2
@@ -13,12 +13,44 @@ update-feed:
         - apt-get update
         - apt-get install zip sqlite3 libzip4 bzip2 -y
     script:
-        - ./update-feed.py
+        - ./update-feed.py me_zpcg.toml
     cache:
-        key: database
+        key: zpcg-database
         paths:
-            - gtfs.sqlite
+            - me_zpcg.sqlite
             - latest_timestamp_Podgorica.txt
     artifacts:
         paths:
             - me_zpcg.gtfs.zip
+
+update-srbijavoz-feed:
+    image: docker.io/python
+    before_script:
+        - wget "https://dl.dropboxusercontent.com/scl/fi/4kwt40muhid8fd0bol9qm/srbijavoz-routes.osm.bz2?rlkey=c5e0doijr760s90ulx68ezxzf&st=wjsc4yjg&dl=0" -O srbijavoz-routes.osm.bz2
+        - wget "https://dl.dropboxusercontent.com/scl/fi/0pjsx0fdxfdbtsd3nuku6/pfaedle?rlkey=yijemjg07wq6f3w6ei18sii51&st=uub66mej&dl=0" -O /usr/local/bin/pfaedle
+        - chmod +x /usr/local/bin/pfaedle
+        - mkdir -p /usr/local/etc/pfaedle/
+        - wget https://github.com/ad-freiburg/pfaedle/raw/master/pfaedle.cfg -O /usr/local/etc/pfaedle/pfaedle.cfg
+
+        - wget https://github.com/public-transport/gtfsclean/releases/download/snapshot-3/gtfsclean -O /usr/local/bin/gtfsclean
+        - chmod +x /usr/local/bin/gtfsclean
+        - pip3 install -r requirements.txt
+        - apt-get update
+        - apt-get install zip sqlite3 libzip4 bzip2 -y
+    script:
+        - ./update-feed.py rs_srbijavoz.toml
+    cache:
+        key: srbijavoz-database
+        paths:
+            - rs_srbijavoz.sqlite
+            - latest_timestamp_Beograd_centar.txt
+            - latest_timestamp_Kraljevo.txt
+            - latest_timestamp_Majdanpek.txt
+            - latest_timestamp_Nis.txt
+            - latest_timestamp_Novi_Sad.txt
+            - latest_timestamp_Požarevac.txt
+            - latest_timestamp_Šabac.txt
+            - latest_timestamp_Subotica.txt
+    artifacts:
+        paths:
+            - rs_srbijavoz.gtfs.zip

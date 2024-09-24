@@ -1,0 +1,14 @@
+[operator]
+id="rs_srbijavoz"
+name="Srbijavoz"
+url="https://srbijavoz.rs"
+phone="+381 11 3602899"
+email="putnik.info@srbijavoz.rs"
+color="0768B5"
+text_color="D7E8F4"
+lang="srp"
+
+[data]
+stations=["Beograd centar", "Subotica", "Novi Sad", "Nis", "Majdanpek", "Kraljevo", "Šabac", "Požarevac"]
+timezone="Europe/Belgrade"
+osm_shapes="srbijavoz-routes.osm.bz2"

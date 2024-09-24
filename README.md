@@ -32,10 +32,11 @@ You can regenerate the stations.geojson file using the following query on https:
     area["ISO3166-1"="RS"];
     area["ISO3166-1"="ME"];
     area["ISO3166-1"="BA"];
+    area["ISO3166-1"="HU"];
 );
 (
   (
-    nwr[~"disused:railway|construction:railway|railway"~"station|halt"](area);
+    nwr[~"disused:railway|construction:railway|railway"~"station|halt|yard"](area);
   );
 );
 out center;

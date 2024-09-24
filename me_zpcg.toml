@@ -1,15 +1,14 @@
 [operator]
+id="me_zpcg"
 name="Željeznički prevoz Crne Gore"
 url="https://zpcg.me"
 phone="+382 20 441 197"
 email="info@zpcg.me"
 color="D82234"
 text_color="F6F6F6"
+lang="cnr"
 
 [data]
 stations=["Podgorica"]
 timezone="Europe/Podgorica"
 osm_shapes="zpcg-routes.osm.bz2"
-
-[output]
-filename="me_zpcg.gtfs.zip"

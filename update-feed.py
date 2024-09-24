@@ -20,8 +20,8 @@ from pyhafas.types.fptf import Leg, Mode
 from pyhafas.types.exceptions import GeneralHafasError
 
 
-def prepare_database():
-    db = sqlite3.connect("gtfs.sqlite")
+def prepare_database(sqlite_filename):
+    db = sqlite3.connect(sqlite_filename)
     cur = db.cursor()
     cur.executescript(
         """
@@ -50,11 +50,46 @@ def distance(a: Tuple[float, float], b: Tuple[float, float]):
     return (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2
 
 
-class StationNotFoundException(Exception):
-    pass
+class Stop:
+    name: str
+    lat: float
+    lon: float
 
 
-def search_station(stations, lat: float, lon: float):
+def choose_best_osm_node(candidates, stop):
+    for candidate in candidates:
+        # Prefer node with matching ibnr
+        if "ref:ibnr" in candidate["properties"] and candidate["properties"]["ref:ibnr"] == stop.id:
+            return candidate
+
+    for candidate in candidates:
+        # Prefer stations and halts over yards and disused / abandoned nodes
+        if (
+            (
+                "railway" in candidate["properties"]
+                and (
+                    candidate["properties"]["railway"] == "station"
+                    or candidate["properties"]["railway"] == "halt"
+                )
+                or (
+                    "public_transport" in candidate["properties"]
+                    and "public_transport" in candidate["properties"] == "station"
+                )
+            )
+            and "abandoned:railway" not in candidate["properties"]
+            and "disused:railway" not in candidate["properties"]
+        ):
+            return candidate
+    else:
+        # If nothing obvious was found, use the next best thing
+        return candidates[0]
+
+
+def search_station(stations, stop):
+    osm_stop = Stop()
+
+    candidates = []
+
     for station in stations:
         if (
             distance(
@@ -62,13 +97,28 @@ def search_station(stations, lat: float, lon: float):
                     station["geometry"]["coordinates"][1],
                     station["geometry"]["coordinates"][0],
                 ),
-                (lat, lon),
+                (stop.latitude, stop.longitude),
             )
             < 0.000032
-        ) and "abandoned:railway" not in station["properties"]:
-            return station
+        ) or ("ref:ibnr" in station["properties"] and station["properties"]["ref:ibnr"] == stop.id):
+            candidates.append(station)
 
-    raise StationNotFoundException(f"Station at {lat}, {lon} not found in OpenStreetMap data")
+    if candidates:
+        osm_node = choose_best_osm_node(candidates, stop)
+
+        osm_stop.name = station_name_fallback(osm_node)
+        osm_stop.lat = osm_node["geometry"]["coordinates"][1]
+        osm_stop.lon = osm_node["geometry"]["coordinates"][0]
+
+        return osm_stop
+    else:
+        print(
+            f"Did not find {stop.name} ({stop.id}) in OSM data near {stop.latitude}, {stop.longitude}"
+        )
+        osm_stop.name = stop.name
+        osm_stop.lat = stop.latitude
+        osm_stop.lon = stop.longitude
+        return osm_stop
 
 
 def mode_to_route_type(mode, route_type: Optional[str]):
@@ -124,18 +174,23 @@ def station_name_fallback(station):
 
     for prop in priority:
         if prop in station["properties"]:
-            return station["properties"][prop]
+            return station["properties"][prop].strip(
+                "[]"
+            )  # Some railway stations are abandoned but trains still seem to stop there.
+            # Strip away OSMs abandoned markers in the name.
 
     raise Exception(f"No matching property found in {station["properties"]}")
+
 
 with open(sys.argv[1], "rb") as cf:
     config = tomllib.load(cf)
     print(config)
 
+database_file = config["operator"]["id"] + ".sqlite"
+(db, cur) = prepare_database(database_file)
+
 for search_name in config["data"]["stations"]:
     print(f"# Fetching data for {search_name}")
-
-    (db, cur) = prepare_database()
 
     stations = get_stations()
 
@@ -144,7 +199,8 @@ for search_name in config["data"]["stations"]:
     locations = client.locations(search_name)
     best_found_location = locations[0]
 
-    timestamp_file = f"latest_timestamp_{search_name}.txt"
+    search_name_id = search_name.replace(" ", "_")
+    timestamp_file = f"latest_timestamp_{search_name_id}.txt"
 
     try:
         with open(timestamp_file, "r") as tf:
@@ -156,7 +212,8 @@ for search_name in config["data"]["stations"]:
     print(f"Starting at {latest_time}")
 
     cur.execute(
-        """insert or replace into feed_info values ("Jonah Brüchert", "https://jbb.ghsq.de", "cnr", "jbb@kaidan.im")"""
+        """insert or replace into feed_info values ("Jonah Brüchert", "https://jbb.ghsq.de", ?, "jbb@kaidan.im")""",
+        (config["operator"]["lang"],),
     )
 
     # Try to fetch until hafas complains
@@ -184,30 +241,32 @@ for search_name in config["data"]["stations"]:
             departures += client.arrivals(**args)
             latest_arrival = departures[-1].dateTime
 
-            operator_config=config["operator"]
+            operator_config = config["operator"]
             cur.execute(
-                """insert or replace into agencies values ("operator", ?, ?, "Europe/Berlin", ?, NULL, ?)""",
-                (operator_config["name"], operator_config["url"], operator_config["phone"], operator_config["email"])
+                """insert or replace into agencies values (?, ?, ?, "Europe/Berlin", ?, NULL, ?)""",
+                (
+                    operator_config["id"],
+                    operator_config["name"],
+                    operator_config["url"],
+                    operator_config["phone"],
+                    operator_config["email"],
+                ),
             )
 
             for departure in departures:
                 trip = client.trip(departure.id)
                 (route_type, trip_name) = split_trip_name(trip.name)
 
-                start = search_station(
-                    stations, trip.stopovers[0].stop.latitude, trip.stopovers[0].stop.longitude
-                )
-                dest = search_station(
-                    stations, trip.stopovers[-1].stop.latitude, trip.stopovers[-1].stop.longitude
-                )
+                start = search_station(stations, trip.stopovers[0].stop)
+                dest = search_station(stations, trip.stopovers[-1].stop)
 
                 cur.execute(
                     """insert or replace into routes values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                     (
                         trip.name,
-                        "operator",
+                        operator_config["id"],
                         None,
-                        f"{station_name_fallback(start)} - {station_name_fallback(dest)}",
+                        f"{start.name} - {dest.name}",
                         None,
                         mode_to_route_type(trip.mode, route_type),
                         None,
@@ -245,31 +304,18 @@ for search_name in config["data"]["stations"]:
 
                 sequence = 1
                 for stopover in trip.stopovers:
-                    try:
-                        station_metadata = search_station(
-                            stations, stopover.stop.latitude, stopover.stop.longitude
-                        )
-                        name = station_name_fallback(station_metadata)
-                        lat = station_metadata["geometry"]["coordinates"][1]
-                        lon = station_metadata["geometry"]["coordinates"][0]
-                    except StationNotFoundException:
-                        print(
-                            f"Did not find {stopover.stop.name} in OSM data near {stopover.stop.latitude}, {stopover.stop.longitude}"
-                        )
-                        name = stopover.stop.name
-                        lat = stopover.stop.latitude
-                        lon = stopover.stop.longitude
+                    station_metadata = search_station(stations, stopover.stop)
 
                     cur.execute(
                         """insert or replace into stops values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                         (
                             stopover.stop.id,
                             None,
-                            name,
+                            station_metadata.name,
                             None,
                             None,
-                            lat,
-                            lon,
+                            station_metadata.lat,
+                            station_metadata.lon,
                             None,
                             None,
                             0,
@@ -304,33 +350,38 @@ for search_name in config["data"]["stations"]:
                     )
                     sequence += 1
 
-            latest_time = min(
+            latest_time_end = min(
                 latest_departure,
                 latest_arrival,
             )
-            print(f"Fetched until {latest_time}")
+            print(f"Fetched until {latest_time_end}")
+
+            print("Writing changes to database…")
+            db.commit()
 
             if departures:
                 with open(
                     timestamp_file,
                     "w",
                 ) as tf:
-                    tf.write(f"{int(latest_time.timestamp())}")
+                    tf.write(f"{int(latest_time_end.timestamp())}")
+
+            if latest_time.timestamp() == latest_time_end.timestamp():
+                print("Stopping because no more data is available")
+                break
+
+            latest_time = latest_time_end
 
         except (GeneralHafasError, KeyboardInterrupt) as e:
             print("Stopping because of", e)
-            pass
             break
 
-
-print("Writing changes to database…")
-db.commit()
 
 if not os.path.exists("out"):
     os.makedirs("out")
 
 subprocess.run(
-    ["sqlite3", "../gtfs.sqlite"],
+    ["sqlite3", "../" + database_file],
     input=""".headers on
 .mode csv
 .output stops.txt
@@ -353,11 +404,13 @@ select * from feed_info;
     cwd="out",
 )
 
+output_filename = f"{config["operator"]["id"]}.gtfs.zip"
+
 files = list(map(lambda p: p.name, Path("out").glob("*.txt")))
 subprocess.check_call(
     [
         "zip",
-        "gtfs.zip",
+        "../" + output_filename,
     ]
     + files,
     cwd="out",
@@ -377,12 +430,11 @@ subprocess.check_call(
         "--minimize-ids-char",
         "--keep-station-ids",
         "--delete-orphans",
-        "gtfs.zip",
+        output_filename,
         "--output",
-        "../" + config["output"]["filename"],
-    ],
-    cwd="out"
+        output_filename,
+    ]
 )
 
-subprocess.check_call(["pfaedle", "--inplace", "-x", config["data"]["osm_shapes"], config["output"]["filename"]])
-subprocess.check_call(["gtfsclean", config["output"]["filename"], "-o", config["output"]["filename"]])
+subprocess.check_call(["pfaedle", "--inplace", "-x", config["data"]["osm_shapes"], output_filename])
+subprocess.check_call(["gtfsclean", output_filename, "-o", output_filename])
