@@ -281,7 +281,7 @@ for search_name in config["data"]["stations"]:
                         trip.name,
                         service_id(trip.id),
                         sha256(trip.id.encode()).hexdigest(),
-                        None,
+                        dest.name,
                         trip_name,
                         None,
                         None,
