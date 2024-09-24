@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2024-09-24T06:09:44Z",
+  "timestamp": "2024-09-24T10:32:59Z",
   "features": [
     {
       "type": "Feature",
@@ -14519,6 +14519,7 @@
       "properties": {
         "@id": "node/523213074",
         "name": "Смедеревска Паланка",
+        "name:sr-Latn": "Smederevska Palanka",
         "public_transport": "station",
         "railway": "station"
       },
@@ -28109,6 +28110,7 @@
       "properties": {
         "@id": "node/1614765533",
         "name": "Мајданпек",
+        "name:sr-Latn": "Majdanpek",
         "public_transport": "station",
         "railway": "station",
         "ref:ibnr": "7200220"
@@ -31809,7 +31811,8 @@
         "name": "Старо Трубарево",
         "name:sr": "Старо Трубарево",
         "name:sr-Latn": "Staro Trubarevo",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200410"
       },
       "geometry": {
         "type": "Point",
@@ -33627,7 +33630,8 @@
         "name:ru": "Суповачки мост",
         "name:sr": "Суповачки мост",
         "name:sr-Latn": "Supovački most",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200438"
       },
       "geometry": {
         "type": "Point",
@@ -33668,7 +33672,8 @@
         "name:ru": "Вртиште",
         "name:sr": "Вртиште",
         "name:sr-Latn": "Vrtište",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200440"
       },
       "geometry": {
         "type": "Point",
@@ -34022,7 +34027,8 @@
         "name": "Кривељски поток",
         "name:sr": "Кривељски поток",
         "name:sr-Latn": "Kriveljski potok",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200366"
       },
       "geometry": {
         "type": "Point",
@@ -35382,7 +35388,8 @@
         "name:en": "Tominac halt",
         "name:sr": "Томинац стајалиште",
         "name:sr-Latn": "Tominac stajalište",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200760"
       },
       "geometry": {
         "type": "Point",
@@ -38003,7 +38010,8 @@
         "name:en": "Podunavci",
         "name:sr": "Подунавци",
         "name:sr-Latn": "Podunavci",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200745"
       },
       "geometry": {
         "type": "Point",
@@ -42352,6 +42360,7 @@
       "properties": {
         "@id": "node/4950591374",
         "name": "Дедина",
+        "name:sr-Latn": "Dedina",
         "public_transport": "station",
         "railway": "station",
         "ref:ibnr": "7200738"
@@ -48246,6 +48255,7 @@
         "@id": "node/6720139220",
         "gauge:1924-10-04-1958-05-20": "760;1435",
         "name": "Ћићевац",
+        "name:sr-Latn": "Ćićevac",
         "public_transport": "station",
         "railway": "station",
         "train": "yes"
@@ -48540,6 +48550,7 @@
       "properties": {
         "@id": "node/6845412573",
         "name": "Гугаљ",
+        "name:sr-Latn": "Gugalj",
         "railway": "halt"
       },
       "geometry": {
@@ -48573,6 +48584,7 @@
       "properties": {
         "@id": "node/6845431037",
         "name": "Читлук",
+        "name:sr-Latn": "Čitluk",
         "railway": "halt"
       },
       "geometry": {
