@@ -8,7 +8,9 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 This repository contains scripts to fetch the timetable from the Deutsche Bahn API, augment it with OpenStreetMap data and generate a GTFS feed from it.
 
-The resulting feed can be found at [jbb.ghsq.de/gtfs/me-zpcg.gtfs.zip](https://jbb.ghsq.de/gtfs/me-zpcg.gtfs.zip)
+The resulting feeds are:
+ * [ŽPCG (trains in Montenegro)](https://jbb.ghsq.de/gtfs/me-zpcg.gtfs.zip)
+ * [Srbijavoz (trains in Serbia)](https://jbb.ghsq.de/gtfs/rs-srbijavoz.gtfs.zip)
 
 ## Dependencies
 
@@ -18,6 +20,7 @@ To run the `update-feed.sh` script, you need
 * pyhafas
 * zip
 * [gtfsclean](https://github.com/public-transport/gtfsclean/)
+* [pfaedle](https://github.com/ad-freiburg/pfaedle)
 
 
 ## License
