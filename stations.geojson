@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2024-09-24T20:47:45Z",
+  "timestamp": "2024-09-26T02:51:12Z",
   "features": [
     {
       "type": "Feature",
@@ -5563,8 +5563,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0397501,
-          47.4978823
+          19.0397417,
+          47.4978756
         ]
       },
       "id": "node/280179036"
@@ -5584,8 +5584,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0385707,
-          47.4976448
+          19.0385676,
+          47.4976438
         ]
       },
       "id": "node/280179037"
@@ -14745,6 +14745,7 @@
         "operator": "Srbija Voz",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "7200251",
         "train": "yes",
         "uic_name": "Zemun",
         "website": "https://srbijavoz.rs",
@@ -28104,7 +28105,8 @@
         "name:en": "Debeli Lug",
         "name:sr": "Дебели Луг",
         "name:sr-Latn": "Debeli Lug",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200360"
       },
       "geometry": {
         "type": "Point",
@@ -28186,7 +28188,8 @@
         "name:sr": "Печењевце",
         "name:sr-Latn": "Pečenjevce",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "ref:ibnr": "7200482"
       },
       "geometry": {
         "type": "Point",
@@ -33240,7 +33243,8 @@
         "name": "Брзан",
         "name:sr": "Брзан",
         "name:sr-Latn": "Brzan",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200421"
       },
       "geometry": {
         "type": "Point",
@@ -33258,7 +33262,8 @@
         "name": "Милошево",
         "name:sr": "Милошево",
         "name:sr-Latn": "Miloševo",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200422"
       },
       "geometry": {
         "type": "Point",
@@ -34358,7 +34363,8 @@
         "name:sr": "Међурово",
         "name:sr-Latn": "Međurovo",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "ref:ibnr": "7200478"
       },
       "geometry": {
         "type": "Point",
@@ -34635,7 +34641,8 @@
         "name": "Прибој Лесковачки",
         "name:sr": "Прибој Лесковачки",
         "name:sr-Latn": "Priboj Leskovački",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200497"
       },
       "geometry": {
         "type": "Point",
@@ -36015,6 +36022,7 @@
         "name:sr": "Шумановића Баре",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231106",
         "wikidata": "Q111992738"
       },
       "geometry": {
@@ -36828,7 +36836,8 @@
         "name": "Јасиково",
         "name:sr": "Јасиково",
         "name:sr-Latn": "Jasikovo",
-        "railway": "halt"
+        "railway": "halt",
+        "ref:ibnr": "7200361"
       },
       "geometry": {
         "type": "Point",
@@ -51851,8 +51860,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0472659,
-          47.5662925
+          19.0472339,
+          47.5662901
         ]
       },
       "id": "node/7792439506"
@@ -61604,6 +61613,9 @@
       "type": "Feature",
       "properties": {
         "@id": "node/10223586987",
+        "addr:city": "Kunhegyes",
+        "addr:postcode": "5340",
+        "addr:street": "Széchenyi utca",
         "name": "Kunhegyes",
         "operator": "MÁV",
         "public_transport": "station",
@@ -61611,7 +61623,11 @@
         "railway:name:VPE": "Kunhegyes",
         "railway:ref": "KU",
         "train": "yes",
-        "uic_ref": "5512344"
+        "uic_ref": "5512344",
+        "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/kunhegyes",
+        "wheelchair": "no",
+        "wikidata": "Q22047684",
+        "wikipedia": "hu:Kunhegyes vasútállomás"
       },
       "geometry": {
         "type": "Point",

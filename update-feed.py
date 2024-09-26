@@ -11,8 +11,11 @@ import subprocess
 import os
 import tomllib
 import sys
+import unicodedata
+import re
 from hashlib import sha256
 from pathlib import Path
+from difflib import SequenceMatcher
 
 from pyhafas import HafasClient
 from pyhafas.profile import DBProfile
@@ -85,6 +88,40 @@ def choose_best_osm_node(candidates, stop):
         return candidates[0]
 
 
+def strip_accents(s):
+    return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
+
+
+def normalize_name(name):
+    return (
+        re.sub(r"\(.*\)", "", strip_accents(name))
+        .replace("Stajaliste ", "")
+        .replace(" Stajaliste", "")
+        .lower()
+    )
+
+
+def station_name_matches(osm_station, name):
+    """
+    Returns True if the station name does not contradict the station matching.
+    Returns False if the two are unlikely to be the same.
+    """
+    match_name = normalize_name(name)
+    matcher = SequenceMatcher(None, match_name)
+    match = False
+    for prop, value in osm_station["properties"].items():
+        if prop.startswith("name") or prop.startswith("alt_name") or prop.startswith("int_name"):
+            osm_name = normalize_name(value)
+            matcher.set_seq2(osm_name)
+            if matcher.ratio() > 0.75:
+                match = True
+
+            if osm_name and match_name and (osm_name in match_name or match_name in osm_name):
+                match = True
+
+    return match
+
+
 def search_station(stations, stop):
     osm_stop = Stop()
 
@@ -99,7 +136,8 @@ def search_station(stations, stop):
                 ),
                 (stop.latitude, stop.longitude),
             )
-            < 0.000032
+            < 0.00002
+            and station_name_matches(station, stop.name)
         ) or ("ref:ibnr" in station["properties"] and station["properties"]["ref:ibnr"] == stop.id):
             candidates.append(station)
 
