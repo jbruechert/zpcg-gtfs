@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2024-09-26T02:51:12Z",
+  "timestamp": "2024-09-30T01:56:50Z",
   "features": [
     {
       "type": "Feature",
@@ -6667,50 +6667,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/312491162",
-        "name": "Пријепоље",
-        "name:de": "Prijepolje",
-        "name:en": "Prijepolje",
-        "name:sr": "Пријепоље",
-        "name:sr-Latn": "Prijepolje",
-        "network": "ЖС",
-        "operator": "ЖС",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.6399692,
-          43.392852
-        ]
-      },
-      "id": "node/312491162"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/312491163",
-        "name": "Прибој",
-        "name:sr": "Прибој",
-        "name:sr-Latn": "Priboj",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.5249314,
-          43.5818528
-        ]
-      },
-      "id": "node/312491163"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/313086695",
         "building": "train_station",
         "disused:railway": "halt",
@@ -6779,14 +6735,15 @@
         "name:sr-Latn": "Lazarevac",
         "public_transport": "station",
         "railway": "station",
+        "train": "yes",
         "wikidata": "Q31182303",
         "wikipedia": "sr:Железничка станица Лазаревац"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.2454598,
-          44.3848662
+          20.2454336,
+          44.3848753
         ]
       },
       "id": "node/313235265"
@@ -6824,13 +6781,13 @@
         "name": "Ужице",
         "name:sr": "Ужице",
         "name:sr-Latn": "Užice",
-        "network": "ЖС",
-        "operator": "ЖС",
         "public_transport": "station",
         "railway": "station",
         "train": "yes",
         "uic_ref": "7200208",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "wikidata": "Q31182414",
+        "wikipedia": "sr:Железничка станица Ужице"
       },
       "geometry": {
         "type": "Point",
@@ -6848,16 +6805,17 @@
         "name": "Бранешци",
         "name:sr": "Бранешци",
         "name:sr-Latn": "Branešci",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "train": "yes",
-        "wheelchair": "no"
+        "wikidata": "Q31182433",
+        "wikipedia": "sr:Железничка станица Бранешци"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6816796,
-          43.7792339
+          19.6816853,
+          43.7792482
         ]
       },
       "id": "node/315237979"
@@ -17130,40 +17088,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/914366315",
-        "disused:railway": "station",
-        "name": "Hrnjadi",
-        "name:sr": "Хрњади",
-        "name:sr-Latn": "Hrnjadi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          16.2536796,
-          44.4119
-        ]
-      },
-      "id": "node/914366315"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/914366768",
-        "disused:railway": "station",
-        "name": "Vaganj"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          16.2674069,
-          44.338246
-        ]
-      },
-      "id": "node/914366768"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/917840934",
         "gauge:1954-1966-11-05": "760",
         "name": "Čelebići",
@@ -26400,26 +26324,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1414372177",
-        "name": "Бистрица на Лиму",
-        "name:sr": "Бистрица на Лиму",
-        "name:sr-Latn": "Bistrica na Limu",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.646331,
-          43.4832109
-        ]
-      },
-      "id": "node/1414372177"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1417644030",
         "name": "Предејане",
         "name:en": "Predejane",
@@ -27590,26 +27494,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1560437283",
-        "name": "Пријепоље теретна",
-        "name:sr": "Пријепоље теретна",
-        "name:sr-Latn": "Prijepolje teretna",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.6335099,
-          43.3664514
-        ]
-      },
-      "id": "node/1560437283"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1563985400",
         "alt_name": "Stacioni Çiflak",
         "disused": "yes",
@@ -27811,16 +27695,17 @@
         "name": "Златибор",
         "name:sr": "Златибор",
         "name:sr-Latn": "Zlatibor",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "train": "yes",
-        "wheelchair": "no"
+        "wikidata": "Q31182432",
+        "wikipedia": "sr:Железничка станица Златибор"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6144021,
-          43.7350387
+          19.614357,
+          43.7350426
         ]
       },
       "id": "node/1598918645"
@@ -28306,40 +28191,21 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1638917484",
-        "name": "Севојно",
-        "name:en": "Sevojno",
-        "name:sr": "Севојно",
-        "name:sr-Latn": "Sevojno",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.9044591,
-          43.8377952
-        ]
-      },
-      "id": "node/1638917484"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1639094937",
         "name": "Ражана",
         "name:sr": "Ражана",
         "name:sr-Latn": "Ražana",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
-        "train": "yes"
+        "train": "yes",
+        "wikidata": "Q31182419",
+        "wikipedia": "sr:Железничка станица Ражана"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.9086884,
-          44.0606429
+          19.9086679,
+          44.0606129
         ]
       },
       "id": "node/1639094937"
@@ -29063,16 +28929,18 @@
         "name:en": "Susica",
         "name:sr": "Сушица",
         "name:sr-Latn": "Sušica",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "train": "yes",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "wikidata": "Q31182434",
+        "wikipedia": "sr:Железничка станица Сушица"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.7529074,
-          43.7886892
+          19.7528831,
+          43.7886965
         ]
       },
       "id": "node/1711847690"
@@ -32046,8 +31914,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.4305482,
-          44.7320491
+          20.4305536,
+          44.7320841
         ]
       },
       "id": "node/1837532811"
@@ -32598,10 +32466,12 @@
         "name:en": "Lajkovac",
         "name:sr": "Лајковац",
         "name:sr-Latn": "Lajkovac",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "train": "yes",
-        "uic_ref": "7200110"
+        "uic_ref": "7200110",
+        "wikidata": "Q14702164",
+        "wikipedia": "sr:Железничка станица Лајковац"
       },
       "geometry": {
         "type": "Point",
@@ -32619,13 +32489,17 @@
         "name": "Словац",
         "name:sr": "Словац",
         "name:sr-Latn": "Slovac",
-        "railway": "station"
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes",
+        "wikidata": "Q31182382",
+        "wikipedia": "sr:Железничка станица Словац"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.0931827,
-          44.3471782
+          20.0932089,
+          44.3471725
         ]
       },
       "id": "node/1843655568"
@@ -32739,15 +32613,17 @@
         "name": "Каленић",
         "name:sr": "Каленић",
         "name:sr-Latn": "Kalenić",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
-        "train": "yes"
+        "train": "yes",
+        "wikidata": "Q31182424",
+        "wikipedia": "sr:Железничка станица Каленић"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.9895379,
-          43.9274747
+          19.9895798,
+          43.9274827
         ]
       },
       "id": "node/1843675132"
@@ -32933,7 +32809,10 @@
         "name:sr": "Пријевор",
         "name:sr-Latn": "Prijevor",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "train": "yes",
+        "wikidata": "Q31183760",
+        "wikipedia": "sr:Железничка станица Пријевор"
       },
       "geometry": {
         "type": "Point",
@@ -33013,8 +32892,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.0239474,
-          43.8079745
+          20.0240054,
+          43.8079806
         ]
       },
       "id": "node/1845232147"
@@ -33026,15 +32905,17 @@
         "name": "Узићи",
         "name:sr": "Узићи",
         "name:sr-Latn": "Uzići",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
-        "train": "yes"
+        "train": "yes",
+        "wikidata": "Q31182423",
+        "wikipedia": "sr:Железничка станица Узићи"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           19.9806285,
-          43.8121056
+          43.8121466
         ]
       },
       "id": "node/1845238410"
@@ -33125,15 +33006,17 @@
         "@id": "node/1845247885",
         "name": "Štrpci",
         "name:sr": "Штрпци",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
-        "train": "yes"
+        "train": "yes",
+        "wikidata": "Q31182413",
+        "wikipedia": "sr:Железничка станица Штрпци"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.5032825,
-          43.6387502
+          19.5032517,
+          43.6387404
         ]
       },
       "id": "node/1845247885"
@@ -35396,16 +35279,18 @@
         "name": "Јабланица",
         "name:sr": "Јабланица",
         "name:sr-Latn": "Jablanica",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "train": "yes",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "wikidata": "Q31182430",
+        "wikipedia": "sr:Железничка станица Јабланица"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.5204246,
-          43.7009213
+          19.5204123,
+          43.7009293
         ]
       },
       "id": "node/1918196475"
@@ -35443,8 +35328,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.5733908,
-          43.7079921
+          19.5732479,
+          43.7081026
         ]
       },
       "id": "node/1946042657"
@@ -35456,18 +35341,17 @@
         "name": "Стапари",
         "name:sr": "Стапари",
         "name:sr-Latn": "Stapari",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "train": "yes",
-        "wheelchair": "no",
         "wikidata": "Q31182426",
         "wikipedia": "sr:Железничка станица Стапари"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.76231,
-          43.8456908
+          19.7623162,
+          43.8457059
         ]
       },
       "id": "node/1946075818"
@@ -51109,26 +50993,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/7476461208",
-        "name": "Ужице теретна",
-        "name:sr": "Ужице теретна",
-        "name:sr-Latn": "Užice teretna",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.8584157,
-          43.8466886
-        ]
-      },
-      "id": "node/7476461208"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/7479992424",
         "abandoned:public_transport": "station",
         "abandoned:railway": "station",
@@ -51185,24 +51049,6 @@
         ]
       },
       "id": "node/7517717216"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/7542275676",
-        "name": "Косјерић",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.9189732,
-          44.0004133
-        ]
-      },
-      "id": "node/7542275676"
     },
     {
       "type": "Feature",
@@ -51794,27 +51640,6 @@
         ]
       },
       "id": "node/7738178100"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/7775783138",
-        "name": "Рибница Златиборска",
-        "name:sr": "Рибница Златиборска",
-        "name:sr-Latn": "Ribnica Zlatiborska",
-        "public_transport": "stop_position",
-        "railway": "halt",
-        "train": "yes",
-        "wheelchair": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.5731644,
-          43.7080883
-        ]
-      },
-      "id": "node/7775783138"
     },
     {
       "type": "Feature",
@@ -55177,6 +55002,28 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/8536087455",
+        "name": "Самари",
+        "name:sr": "Самари",
+        "name:sr-Latn": "Samari",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes",
+        "wikidata": "Q31182392",
+        "wikipedia": "sr:Железничка станица Самари"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8578834,
+          44.1234781
+        ]
+      },
+      "id": "node/8536087455"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/8560083768",
         "name": "Érdliget",
         "operator": "MÁV",
@@ -55689,29 +55536,6 @@
         ]
       },
       "id": "node/8968041611"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/8983918745",
-        "int_name": "Uzice",
-        "name": "Ужице",
-        "name:sr": "Ужице",
-        "name:sr-Latn": "Užice",
-        "network": "ЖС",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "ref": "ЖС",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.8397078,
-          43.8534335
-        ]
-      },
-      "id": "node/8983918745"
     },
     {
       "type": "Feature",
@@ -58939,7 +58763,10 @@
         "name:sr": "Ресник",
         "name:sr-Latn": "Resnik",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "train": "yes",
+        "wikidata": "Q20435889",
+        "wikipedia": "sr:Железничка станица Ресник"
       },
       "geometry": {
         "type": "Point",
@@ -60322,7 +60149,7 @@
         "name": "Ластра",
         "name:sr": "Ластра",
         "name:sr-Latn": "Lastra",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "train": "yes",
         "wikidata": "Q31182390",
@@ -60331,31 +60158,11 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.8864444,
-          44.1562863
+          19.8864687,
+          44.1563131
         ]
       },
       "id": "node/10121271166"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/10121405576",
-        "name": "Самари",
-        "name:sr": "Самари",
-        "name:sr-Latn": "Samari",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.8578578,
-          44.1234785
-        ]
-      },
-      "id": "node/10121405576"
     },
     {
       "type": "Feature",
@@ -60365,7 +60172,10 @@
         "name:sr": "Косјерић",
         "name:sr-Latn": "Kosjerić",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "train": "yes",
+        "wikidata": "Q28422875",
+        "wikipedia": "sr:Железничка станица Косјерић"
       },
       "geometry": {
         "type": "Point",
@@ -60404,7 +60214,10 @@
         "name:sr": "Ужице теретна",
         "name:sr-Latn": "Užice teretna",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "train": "yes",
+        "wikidata": "Q31182417",
+        "wikipedia": "sr:Железничка станица Ужице–теретна"
       },
       "geometry": {
         "type": "Point",
@@ -60456,8 +60269,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.633481,
-          43.3664279
+          19.6334818,
+          43.3664356
         ]
       },
       "id": "node/10123663657"
@@ -61028,7 +60841,11 @@
         "railway:ref": "SZ",
         "ref:mav": "1799",
         "train": "yes",
-        "uic_ref": "5512328"
+        "uic_ref": "5512328",
+        "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/abadszalok",
+        "wheelchair": "no",
+        "wikidata": "Q22047683",
+        "wikipedia": "hu:Abádszalók megállóhely"
       },
       "geometry": {
         "type": "Point",
@@ -62659,7 +62476,9 @@
         "name:sr-Latn": "Bistrica na Limu",
         "public_transport": "station",
         "railway": "station",
-        "train": "yes"
+        "train": "yes",
+        "wikidata": "Q31182403",
+        "wikipedia": "sr:Железничка станица Бистрица на Лиму"
       },
       "geometry": {
         "type": "Point",
@@ -65517,13 +65336,15 @@
         "name:sr-Latn": "Sevojno",
         "public_transport": "station",
         "railway": "station",
-        "train": "yes"
+        "train": "yes",
+        "wikidata": "Q31182418",
+        "wikipedia": "sr:Железничка станица Севојно"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.9044583,
-          43.8379267
+          19.9043974,
+          43.8378399
         ]
       },
       "id": "node/10736250003"
@@ -67729,7 +67550,7 @@
         "@id": "node/10839917432",
         "abandoned:railway": "station",
         "gauge:1902-03-20-1978-05-28": "760",
-        "name": "[Vaganj]",
+        "name": "Vaganj",
         "public_transport": "no",
         "railway": "site",
         "railway:position": "185.1",
@@ -67750,7 +67571,7 @@
         "@id": "node/10840229957",
         "abandoned:railway": "station",
         "gauge:1902-03-20-1978-05-28": "760",
-        "name": "[Hrnjadi]",
+        "name": "Hrnjadi",
         "public_transport": "no",
         "railway": "site",
         "railway:position": "174.3",
