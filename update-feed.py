@@ -275,8 +275,12 @@ for search_name in config["data"]["stations"]:
                 },
             )
             departures = client.departures(**args)
-            latest_departure = departures[-1].dateTime
             departures += client.arrivals(**args)
+            if not departures:
+                print("Stopping, because there are no departures / arrivals from the stop")
+                break
+
+            latest_departure = departures[-1].dateTime
             latest_arrival = departures[-1].dateTime
 
             operator_config = config["operator"]
