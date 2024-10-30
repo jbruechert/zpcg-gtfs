@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2024-10-18T11:01:00Z",
+  "timestamp": "2024-10-30T22:16:42Z",
   "features": [
     {
       "type": "Feature",
@@ -2424,13 +2424,20 @@
       "type": "Feature",
       "properties": {
         "@id": "node/93800938",
+        "addr:city": "Répcelak",
+        "addr:postcode": "9653",
+        "addr:street": "Ady Endre utca",
         "name": "Répcelak",
         "operator": "GYSEV",
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Répcelak",
+        "railway:ref": "RL",
         "ref:mav": "65396",
-        "uic_ref": "5502436"
+        "uic_ref": "5502436",
+        "website": "https://www2.gysev.hu/allomasok-es-megallohelyek/repcelak-vasutallomas",
+        "wikidata": "Q22138348",
+        "wikipedia": "hu:Répcelak vasútállomás"
       },
       "geometry": {
         "type": "Point",
@@ -5704,6 +5711,7 @@
         "addr:street": "Пионирска",
         "building": "train_station",
         "disused:railway": "station",
+        "int_name": "Zeleznicka stanica Sremska Raca",
         "name": "Железничка станица Сремска Рача",
         "name:sr": "Железничка станица Сремска Рача",
         "name:sr-Latn": "Železnička stanica Sremska Rača",
@@ -6653,6 +6661,7 @@
         "name:sr": "Мостар",
         "public_transport": "station",
         "railway": "station",
+        "website": "http://www.zfbh.ba",
         "wikidata": "Q15206322"
       },
       "geometry": {
@@ -16142,6 +16151,7 @@
         "heritage:RS:jurisdiction": "Међуопштински завод за заштиту споменика културе Суботица",
         "heritage:RS:name": "Железничка станица Хоргош - Камараш",
         "heritage:website": "https://nasledje.gov.rs/index.cfm/spomenici/pregled_spomenika?spomenik_id=105491",
+        "int_name": "Zeleznicka stanica Horgos - Kamaras",
         "name": "Железничка станица Хоргош - Камараш",
         "name:hu": "Horgos-Kamaras vasútállomás",
         "name:sr": "Железничка станица Хоргош - Камараш",
@@ -16245,6 +16255,7 @@
         "@id": "way/710332818",
         "building": "train_station",
         "disused:railway": "station",
+        "int_name": "Zeleznicka stanica Visnjicevo",
         "name": "Железничка станица Вишњићево",
         "@geometry": "center"
       },
@@ -16263,6 +16274,7 @@
         "@id": "way/710332821",
         "building": "train_station",
         "disused:railway": "station",
+        "int_name": "Zeleznicka stanica Morovic",
         "name": "Железничка станица Моровић",
         "@geometry": "center"
       },
@@ -16283,6 +16295,7 @@
         "addr:street": "Железничка",
         "building": "train_station",
         "disused:railway": "station",
+        "int_name": "Zeleznicka stanica Adasevci",
         "name": "Железничка станица Адашевци",
         "ref:RS:kucni_broj": "4403229",
         "@geometry": "center"
@@ -16925,8 +16938,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6712504,
-          46.1019634
+          19.6713577,
+          46.1008847
         ]
       },
       "id": "node/893439322"
@@ -47210,8 +47223,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.050298,
-          47.3441992
+          19.0502631,
+          47.3442146
         ]
       },
       "id": "node/6365601881"
@@ -53573,6 +53586,10 @@
       "type": "Feature",
       "properties": {
         "@id": "node/8406757171",
+        "addr:city": "Budapest",
+        "addr:housenumber": "44",
+        "addr:postcode": "1184",
+        "addr:street": "Jegenye fasor",
         "name": "Pestszentlőrinc",
         "operator": "MÁV",
         "public_transport": "station",
@@ -53581,13 +53598,14 @@
         "ref:mav": "282",
         "train": "yes",
         "uic_ref": "5510181",
+        "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/pestszentlorinc",
         "wikidata": "Q18005416"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.1810669,
-          47.4553681
+          19.1827618,
+          47.4548436
         ]
       },
       "id": "node/8406757171"
@@ -59265,6 +59283,25 @@
         ]
       },
       "id": "node/9703424306"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9767449803",
+        "name": "Vrbas Nova",
+        "note": "Future new Vrbas railway station",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.6296896,
+          45.5534414
+        ]
+      },
+      "id": "node/9767449803"
     },
     {
       "type": "Feature",
@@ -65645,8 +65682,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.0461738,
-          43.8470149
+          20.0457811,
+          43.847126
         ]
       },
       "id": "node/10736134363"
@@ -69049,6 +69086,7 @@
         "@id": "node/11332898068",
         "int_name": "Vrbas Nova",
         "name": "Врбас Нова",
+        "name:sr-Latn": "Vrbas Nova",
         "public_transport": "station",
         "railway": "station",
         "train": "yes"
@@ -69056,8 +69094,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6286387,
-          45.5549662
+          19.6293361,
+          45.5536177
         ]
       },
       "id": "node/11332898068"
@@ -70553,6 +70591,26 @@
         ]
       },
       "id": "node/12248634282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12297430623",
+        "int_name": "Vrbas Nova",
+        "name": "Врбас Нова",
+        "name:sr-Latn": "Vrbas Nova",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.6294875,
+          45.553644
+        ]
+      },
+      "id": "node/12297430623"
     }
   ]
 }
