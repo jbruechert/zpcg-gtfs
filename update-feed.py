@@ -480,4 +480,4 @@ subprocess.check_call(
 )
 
 subprocess.check_call(["pfaedle", "--inplace", "-x", config["data"]["osm_shapes"], output_filename])
-subprocess.check_call(["gtfsclean", "--compress", output_filename, "-o", output_filename])
+subprocess.check_call(["gtfsclean", "--compress", "--min-shapes", output_filename, "-o", output_filename])
