@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2024-10-30T22:16:42Z",
+  "timestamp": "2024-11-03T01:50:59Z",
   "features": [
     {
       "type": "Feature",
@@ -6661,7 +6661,7 @@
         "name:sr": "Мостар",
         "public_transport": "station",
         "railway": "station",
-        "website": "http://www.zfbh.ba",
+        "website": "https://www.zfbh.ba/",
         "wikidata": "Q15206322"
       },
       "geometry": {
@@ -27656,25 +27656,23 @@
       "type": "Feature",
       "properties": {
         "@id": "node/1563985400",
-        "alt_name": "Stacioni Çiflak",
+        "alt_name": "Stacioni Çiflak;Železnička Stanica Čiflak",
+        "alt_name:sr": "Železnička Stanica",
         "disused": "yes",
         "disused:railway": "halt",
+        "full_name": "Stanica Čiflak",
+        "full_name:sr": "Železnička Stanica Čiflak",
         "geonameid": "829468",
         "gns:gnadmin": "00",
         "gns:gnadmin2": "Kosovo",
         "gns:gnfeature": "S",
         "gns:gnfeaturec": "RSTN",
-        "name": "Stacioni Hekurudhor Çiflak",
-        "name:alt": "Železnička Stanica Čiflak",
-        "name:full:nd": "Stanica Čiflak",
-        "name:full:nd:sr": "Železnička Stanica Čiflak",
-        "name:generic": "Železnička Stanica",
-        "name:generic:sr": "Železnička Stanica",
-        "name:short": "Čiflak",
-        "name:short:sr": "Čiflak",
-        "name:sort": "CIFLAK",
-        "name:sort:sr": "ZELEZNICKASTANICACIFLAK",
-        "name:sr": "Железничка станица Ћифлак"
+        "name": "Stacioni Hekurudhor Çiflak;Železnička Stanica",
+        "name:sr": "Железничка станица Ћифлак",
+        "short_name": "Čiflak",
+        "short_name:sr": "Čiflak",
+        "sorting_name": "CIFLAK",
+        "sorting_name:sr": "ZELEZNICKASTANICACIFLAK"
       },
       "geometry": {
         "type": "Point",
@@ -35190,7 +35188,9 @@
         "name": "Ostrog",
         "name:sr": "Острог",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "ref:ibnr": "6231104",
+        "wikidata": "Q111988500"
       },
       "geometry": {
         "type": "Point",
@@ -35703,13 +35703,15 @@
         "name": "Spuž",
         "name:sr": "Спуж",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "ref:ibnr": "6231111",
+        "wikidata": "Q31182568"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.2011835,
-          42.5133054
+          19.2013161,
+          42.513412
         ]
       },
       "id": "node/1947214421"
@@ -35722,13 +35724,15 @@
         "name:lt": "Danilovgradas",
         "name:sr": "Даниловград",
         "public_transport": "station",
-        "railway": "station"
+        "railway": "station",
+        "ref:ibnr": "6231109",
+        "wikidata": "Q61123473"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.1136307,
-          42.5591576
+          19.1136714,
+          42.5592794
         ]
       },
       "id": "node/1947214538"
@@ -36182,13 +36186,16 @@
         "@id": "node/2043767191",
         "name": "Pričelje",
         "name:sr": "Причеље",
-        "railway": "station"
+        "public_transport": "station",
+        "railway": "station",
+        "ref:ibnr": "6231112",
+        "wikidata": "Q111992896"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.2232553,
-          42.5039966
+          19.2232014,
+          42.5038377
         ]
       },
       "id": "node/2043767191"
@@ -36199,7 +36206,10 @@
         "@id": "node/2043767874",
         "name": "Ljutotuk",
         "name:sr": "Љутотук",
-        "railway": "station"
+        "public_transport": "station",
+        "railway": "station",
+        "ref:ibnr": "6231110",
+        "wikidata": "Q111992806"
       },
       "geometry": {
         "type": "Point",
@@ -36216,13 +36226,16 @@
         "@id": "node/2043768820",
         "name": "Slap",
         "name:sr": "Слап",
-        "railway": "station"
+        "public_transport": "station",
+        "railway": "station",
+        "ref:ibnr": "6231107",
+        "wikidata": "Q111992775"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0888658,
-          42.6043835
+          19.0887961,
+          42.604294
         ]
       },
       "id": "node/2043768820"
@@ -36242,8 +36255,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0780664,
-          42.6193055
+          19.0780358,
+          42.6193133
         ]
       },
       "id": "node/2043769759"
@@ -36255,13 +36268,16 @@
         "description": "Altitude=295 m",
         "name": "Šobajići",
         "name:sr": "Шобајићи",
-        "railway": "station"
+        "public_transport": "station",
+        "railway": "station",
+        "ref:ibnr": "6231105",
+        "wikidata": "Q111992710"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0615491,
-          42.6326134
+          19.061556,
+          42.632372
         ]
       },
       "id": "node/2043771030"
@@ -36275,13 +36291,16 @@
         "name:en": "Dabovichi",
         "name:ru": "Дабовичи",
         "name:sr": "Дабовићи",
-        "railway": "station"
+        "public_transport": "station",
+        "railway": "station",
+        "ref:ibnr": "6231103",
+        "wikidata": "Q111988496"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0169594,
-          42.6758982
+          19.0170399,
+          42.6759385
         ]
       },
       "id": "node/2043771859"
@@ -36293,7 +36312,10 @@
         "description": "Altitude 535 m",
         "name": "Stubica",
         "name:sr": "Стубица",
-        "railway": "station"
+        "public_transport": "station",
+        "railway": "station",
+        "ref:ibnr": "6231102",
+        "wikidata": "Q111988485"
       },
       "geometry": {
         "type": "Point",
@@ -65441,6 +65463,7 @@
         "operator": "ŽICG",
         "public_transport": "station",
         "railway": "station",
+        "ref:ibnr": "6231101",
         "train": "yes",
         "wikidata": "Q54408517",
         "wikipedia": "sr:Железничка станица Никшић"
