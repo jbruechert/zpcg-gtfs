@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2024-11-03T01:50:59Z",
+  "timestamp": "2024-11-25T22:23:07Z",
   "features": [
     {
       "type": "Feature",
@@ -2863,6 +2863,7 @@
         "disused:railway": "halt",
         "name": "Magyarszerdahely",
         "operator": "MÁV",
+        "railway": "site",
         "railway:name:VPE": "Magyarszerdahely mh.",
         "uic_ref": "5505462"
       },
@@ -4032,6 +4033,28 @@
         ]
       },
       "id": "way/142937398"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/144890124",
+        "building": "yes",
+        "name": "Нови Сад Ранжирна",
+        "name:sr": "Нови Сад Ранжирна",
+        "name:sr-Latn": "Novi Sad Ranžirna",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8127683,
+          45.2709504
+        ]
+      },
+      "id": "way/144890124"
     },
     {
       "type": "Feature",
@@ -6738,9 +6761,10 @@
       "type": "Feature",
       "properties": {
         "@id": "node/313235244",
+        "int_name": "Barajevo centar",
         "name": "Барајево центар",
-        "name:sr": "Барајево Центар",
-        "name:sr-Latn": "Barajevo Centar",
+        "name:sr": "Барајево центар",
+        "name:sr-Latn": "Barajevo centar",
         "public_transport": "stop_position",
         "railway": "halt",
         "train": "yes"
@@ -6802,14 +6826,13 @@
       "type": "Feature",
       "properties": {
         "@id": "node/313236386",
-        "addr:city": "Ruma",
+        "addr:city": "Рума",
         "int_name": "Ruma",
         "name": "Рума",
         "name:hu": "Ruma",
         "name:sr": "Рума",
         "name:sr-Latn": "Ruma",
-        "network": "Zeleznice Srbije",
-        "operator": "Srbija Voz",
+        "operator": "Србија Воз",
         "public_transport": "station",
         "railway": "station",
         "train": "yes",
@@ -8251,7 +8274,8 @@
         "railway:name:VPE": "Szőreg",
         "railway:ref": "SZO",
         "ref:mav": "3907",
-        "uic_ref": "5518952"
+        "uic_ref": "5518952",
+        "wheelchair": "no"
       },
       "geometry": {
         "type": "Point",
@@ -8585,12 +8609,15 @@
       "type": "Feature",
       "properties": {
         "@id": "way/355481344",
+        "addr:housenumber": "48",
+        "addr:street": "Железничка",
         "building": "train_station",
         "disused:railway": "halt",
         "int_name": "Straza",
         "name": "Стража",
         "name:sr": "Стража",
         "name:sr-Latn": "Straža",
+        "ref:RS:kucni_broj": "6339734",
         "@geometry": "center"
       },
       "geometry": {
@@ -13324,13 +13351,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/500910641",
+        "disused:railway": "station",
         "name": "Balinka",
         "operator": "MÁV",
-        "public_transport": "station",
-        "railway": "station",
+        "railway": "site",
         "railway:name:VPE": "Balinka",
-        "source": "guess",
-        "uic_ref": "5503715"
+        "train": "yes",
+        "uic_ref": "5503715",
+        "wikidata": "Q131169453"
       },
       "geometry": {
         "type": "Point",
@@ -13571,8 +13599,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.4796399,
-          46.7585312
+          21.4795749,
+          46.7585615
         ]
       },
       "id": "node/501797823"
@@ -15467,6 +15495,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/619723855",
+        "access": "customers",
         "name": "Vasúttörténeti Park",
         "name:de": "Bahnhistorischer Park",
         "name:en": "Railway History Park",
@@ -15482,8 +15511,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0955866,
-          47.5417126
+          19.0978413,
+          47.5415302
         ]
       },
       "id": "node/619723855"
@@ -15668,7 +15697,12 @@
       "type": "Feature",
       "properties": {
         "@id": "node/628589426",
+        "addr:city": "Biharkeresztes",
+        "addr:housenumber": "2",
+        "addr:postcode": "4110",
+        "addr:street": "Nagy Sándor utca",
         "bus": "yes",
+        "internet_access": "no",
         "name": "Biharkeresztes",
         "network": "101 line",
         "operator": "MÁV",
@@ -17708,6 +17742,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/986758532",
+        "addr:city": "Шабац",
         "name": "Шабац",
         "name:de": "Šabac",
         "name:en": "Sabac",
@@ -17717,14 +17752,16 @@
         "name:sl": "Šabac",
         "name:sr": "Шабац",
         "name:sr-Latn": "Šabac",
-        "old_name:de": "Schabatz;Sabatsch",
-        "railway": "station"
+        "operator": "Србија Воз",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.7014928,
-          44.7589136
+          19.7016067,
+          44.7589839
         ]
       },
       "id": "node/986758532"
@@ -22031,6 +22068,7 @@
         "@id": "node/1065130467",
         "name": "Baja-Dunafürdő",
         "operator": "MÁV",
+        "public_transport": "station",
         "railway": "halt",
         "railway:name:VPE": "Baja-Dunafürdő mh.",
         "ref:mav": "4729",
@@ -22041,8 +22079,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.9210028,
-          46.1931226
+          18.9212965,
+          46.1931282
         ]
       },
       "id": "node/1065130467"
@@ -24272,7 +24310,9 @@
       "type": "Feature",
       "properties": {
         "@id": "node/1212434089",
-        "bus": "yes",
+        "addr:city": "Váncsod",
+        "addr:postcode": "4119",
+        "internet_access": "no",
         "name": "Mezőpeterd",
         "network": "101 line",
         "operator": "MÁV",
@@ -26048,7 +26088,7 @@
         "operator": "MÁV-Start (Magyar Állam Vasutak)",
         "public_transport": "station",
         "railway": "station",
-        "start_date": "1884.10.05",
+        "start_date": "1884-10-05",
         "train": "yes",
         "wheelchair": "no",
         "@geometry": "center"
@@ -36187,15 +36227,15 @@
         "name": "Pričelje",
         "name:sr": "Причеље",
         "public_transport": "station",
-        "railway": "station",
+        "railway": "halt",
         "ref:ibnr": "6231112",
         "wikidata": "Q111992896"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.2232014,
-          42.5038377
+          19.223166,
+          42.503897
         ]
       },
       "id": "node/2043767191"
@@ -37498,7 +37538,7 @@
       "properties": {
         "@id": "node/2386326591",
         "name": "Pálháza",
-        "railway": "halt"
+        "railway": "station"
       },
       "geometry": {
         "type": "Point",
@@ -38304,8 +38344,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.8337837,
-          43.6725562
+          20.8341608,
+          43.6724029
         ]
       },
       "id": "node/2632528676"
@@ -38819,8 +38859,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.4285866,
-          48.4242371
+          21.4285766,
+          48.4242989
         ]
       },
       "id": "node/2982568488"
@@ -42052,6 +42092,7 @@
         "name:en": "Bor teretna",
         "name:sr": "Бор теретна",
         "name:sr-Latn": "Bor teretna",
+        "public_transport": "station",
         "railway": "station"
       },
       "geometry": {
@@ -43999,7 +44040,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/5217774796",
-        "layer": "-4",
+        "level": "-5",
         "name": "Deák Ferenc tér",
         "old_name": "Deák tér",
         "operator": "BKV",
@@ -49231,7 +49272,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/6974122716",
-        "layer": "-3",
+        "level": "-3",
         "name": "Deák Ferenc tér",
         "old_name": "Deák tér",
         "operator": "BKV",
@@ -49255,6 +49296,7 @@
       "properties": {
         "@id": "node/6974122717",
         "layer": "-1",
+        "level": "-1",
         "name": "Deák Ferenc tér",
         "operator": "BKV",
         "public_transport": "station",
@@ -53848,8 +53890,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.4978221,
-          48.4668909
+          21.4978451,
+          48.4669531
         ]
       },
       "id": "node/8428504702"
@@ -54358,8 +54400,12 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Bodajk",
+        "railway:ref": "BOD",
         "train": "yes",
-        "uic_ref": "5503707"
+        "uic_ref": "5503707",
+        "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/bodajk",
+        "wikidata": "Q21996832",
+        "wikipedia": "hu:Bodajk vasútállomás"
       },
       "geometry": {
         "type": "Point",
@@ -55914,7 +55960,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Táska forgalmi kitérő",
-        "start_date": "2021.07.01",
+        "start_date": "2021-07-01",
         "train": "yes",
         "uic_ref": "5549403"
       },
@@ -59940,17 +59986,16 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9990462434",
-        "disused": "yes",
+        "disused:railway": "station",
         "name": "Dren",
         "name:sr": "Дрен",
-        "name:sr-Latn": "Dren",
-        "railway": "station"
+        "name:sr-Latn": "Dren"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.7684383,
-          43.1293205
+          20.7683162,
+          43.1293538
         ]
       },
       "id": "node/9990462434"
@@ -62936,28 +62981,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/10249238916",
-        "internet_access": "no",
-        "name": "Kavicsváltó kitérő",
-        "network": "Pálházai Állami Erdei Vasút",
-        "operator": "Északerdő Zrt.",
-        "public_transport": "station",
-        "railway": "station",
-        "train": "yes",
-        "wheelchair": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.4501731,
-          48.4302536
-        ]
-      },
-      "id": "node/10249238916"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/10250904026",
         "int_name": "Bistrica na Limu",
         "name": "Бистрица на Лиму",
@@ -64527,8 +64550,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.8846989,
-          44.2738365
+          19.8846529,
+          44.2740975
         ]
       },
       "id": "node/10725940975"
@@ -65655,16 +65678,13 @@
         "name": "Подунавци",
         "name:en": "Podunavci",
         "name:sr": "Подунавци",
-        "name:sr-Latn": "Podunavci",
-        "public_transport": "no",
-        "railway": "station",
-        "train": "no"
+        "name:sr-Latn": "Podunavci"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.8346595,
-          43.672089
+          20.8341333,
+          43.6723404
         ]
       },
       "id": "node/10736123100"
@@ -66354,18 +66374,18 @@
       "properties": {
         "@id": "node/10786530284",
         "abandoned:railway": "station",
-        "gauge:1879-06-08-1947-11-16": "760",
+        "gauge:1910-1947-11-16": "760",
         "name": "[Vranduk]",
         "public_transport": "no",
         "railway": "site",
-        "railway:position": "175.8",
+        "railway:position": "174.2",
         "train": "no"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.9117378,
-          44.2800085
+          17.9095912,
+          44.2819469
         ]
       },
       "id": "node/10786530284"
@@ -67718,15 +67738,14 @@
       "type": "Feature",
       "properties": {
         "@id": "node/10831965987",
-        "addr:city": "Sremska Mitrovica",
+        "addr:city": "Сремска Митровица",
         "addr:postcode": "22000",
         "int_name": "Sremska Mitrovica",
         "internet_access": "no",
         "name": "Сремска Митровица",
         "name:sr": "Сремска Митровица",
         "name:sr-Latn": "Sremska Mitrovica",
-        "network": "Zeleznice Srbije",
-        "operator": "Srbija Voz",
+        "operator": "Србија Воз",
         "phone": "+38122623160",
         "public_transport": "station",
         "railway": "station",
@@ -68673,6 +68692,7 @@
         "@id": "node/11076206947",
         "name": "Macs Ipari Park",
         "operator": "MÁV",
+        "proposed:name": "Macs",
         "railway": "yard",
         "uic_ref": "5514477",
         "wikidata": "Q118125500"
@@ -68691,10 +68711,12 @@
       "properties": {
         "@id": "node/11076206948",
         "internet_access": "no",
-        "name": "Macs Ipari Park mh.",
+        "name": "Macs Ipari Park",
         "operator": "MÁV",
+        "proposed:name": "Látókép",
         "public_transport": "station",
         "railway": "halt",
+        "railway:name:VPE": "Macs Ipari Park mh.",
         "train": "yes",
         "uic_ref": "5514466",
         "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/macs-ipari-park-mh",
@@ -69734,7 +69756,9 @@
         "name:en": "Klenak",
         "name:sr": "Кленак",
         "name:sr-Latn": "Klenak",
-        "railway": "halt"
+        "public_transport": "station",
+        "railway": "halt",
+        "train": "yes"
       },
       "geometry": {
         "type": "Point",
@@ -70629,11 +70653,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6294875,
+          19.6294642,
           45.553644
         ]
       },
       "id": "node/12297430623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12337524529",
+        "disused:railway": "halt",
+        "name": "Bodajk felső",
+        "operator": "MÁV",
+        "railway": "site",
+        "uic_ref": "5540370",
+        "wikidata": "Q131169452"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.235532,
+          47.328887
+        ]
+      },
+      "id": "node/12337524529"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12339486420",
+        "disused:railway": "station",
+        "name": "Pusztavám",
+        "operator": "MÁV",
+        "railway": "site",
+        "uic_ref": "5503749",
+        "wikidata": "Q131178821"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.247451,
+          47.413397
+        ]
+      },
+      "id": "node/12339486420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12361607990",
+        "abandoned:railway": "station",
+        "gauge:1879-06-08-1910": "760",
+        "name": "[Vranduk]",
+        "public_transport": "no",
+        "railway": "site",
+        "railway:position": "175.8",
+        "train": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.906602,
+          44.2912061
+        ]
+      },
+      "id": "node/12361607990"
     }
   ]
 }
