@@ -18,7 +18,7 @@ from pathlib import Path
 from difflib import SequenceMatcher
 
 from pyhafas import HafasClient
-from pyhafas.profile import DBProfile
+from pyhafas.profile import OEBBProfile
 from pyhafas.types.fptf import Leg, Mode
 from pyhafas.types.exceptions import GeneralHafasError
 
@@ -232,7 +232,7 @@ for search_name in config["data"]["stations"]:
 
     stations = get_stations()
 
-    client = HafasClient(DBProfile())
+    client = HafasClient(OEBBProfile())
 
     locations = client.locations(search_name)
     best_found_location = locations[0]
@@ -264,7 +264,6 @@ for search_name in config["data"]["stations"]:
                 max_trips=600,
                 products={
                     "long_distance_express": True,
-                    "regional_express": True,
                     "regional": True,
                     "suburban": True,
                     "bus": False,
@@ -285,7 +284,7 @@ for search_name in config["data"]["stations"]:
 
             operator_config = config["operator"]
             cur.execute(
-                """insert or replace into agencies values (?, ?, ?, "Europe/Berlin", ?, NULL, ?)""",
+                """insert or replace into agencies values (?, ?, ?, "Europe/Vienna", ?, NULL, ?)""",
                 (
                     operator_config["id"],
                     operator_config["name"],
@@ -368,6 +367,10 @@ for search_name in config["data"]["stations"]:
                             None,
                         ),
                     )
+                    if not stopover.departure and not stopover.arrival:
+                        print("Skipping", stopover.stop.name, "because it has neither arrival nor departure time")
+                        continue
+
                     cur.execute(
                         """insert or replace into stop_times values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                         (
