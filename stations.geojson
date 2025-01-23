@@ -2,8 +2,27 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2024-11-25T22:23:07Z",
+  "timestamp": "2025-01-23T20:17:59Z",
   "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7917952",
+        "area:railway": "station",
+        "landuse": "railway",
+        "source": "mapbox",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.1891671,
+          47.9996832
+        ]
+      },
+      "id": "relation/7917952"
+    },
     {
       "type": "Feature",
       "properties": {
@@ -94,6 +113,24 @@
         ]
       },
       "id": "relation/17130137"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/17434452",
+        "area:railway": "station",
+        "landuse": "railway",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.0933334,
+          47.4960076
+        ]
+      },
+      "id": "relation/17434452"
     },
     {
       "type": "Feature",
@@ -660,6 +697,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Várpalota",
+        "railway:ref": "VP",
         "ref:mav": "1635",
         "train": "yes",
         "uic_ref": "5503871"
@@ -751,6 +789,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Városlőd-Kislőd",
+        "railway:ref": "VA",
         "ref:mav": "1642",
         "uic_ref": "5503988"
       },
@@ -773,6 +812,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Ajka",
+        "railway:ref": "AK",
         "ref:mav": "1643",
         "uic_ref": "5503996"
       },
@@ -814,6 +854,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Boba",
+        "railway:ref": "OA",
         "ref:mav": "1651",
         "train": "yes",
         "uic_ref": "5504093"
@@ -1111,7 +1152,9 @@
         "railway": "halt",
         "railway:name:VPE": "Csittényhegy mh.",
         "ref:mav": "1672",
-        "uic_ref": "5504333"
+        "uic_ref": "5504333",
+        "wikidata": "Q22091059",
+        "wikipedia": "hu:Csittényhegy megállóhely"
       },
       "geometry": {
         "type": "Point",
@@ -1594,6 +1637,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Pétfürdő",
+        "railway:ref": "PF",
         "ref:mav": "1636",
         "train": "yes",
         "uic_ref": "5503921"
@@ -1616,6 +1660,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Hajmáskér",
+        "railway:ref": "ER",
         "ref:mav": "1637",
         "uic_ref": "5503939",
         "wikidata": "Q22115172",
@@ -1640,6 +1685,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Devecser",
+        "railway:ref": "DC",
         "ref:mav": "1646",
         "uic_ref": "5504044"
       },
@@ -1791,6 +1837,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Mosonmagyaróvár",
+        "railway:ref": "MOV",
         "ref:mav": "3665",
         "uic_name": "Mosonmagyarovar",
         "uic_ref": "5501347"
@@ -1836,6 +1883,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Lébény-Mosonszentmiklós",
+        "railway:ref": "LE",
         "ref:mav": "3663",
         "uic_ref": "5501321"
       },
@@ -2184,6 +2232,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Vép",
+        "railway:ref": "VEP",
         "ref:mav": "65415",
         "uic_ref": "5502238"
       },
@@ -3674,8 +3723,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.0769339,
-          46.9111421
+          18.076941,
+          46.9111779
         ]
       },
       "id": "node/95043903"
@@ -4033,28 +4082,6 @@
         ]
       },
       "id": "way/142937398"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "way/144890124",
-        "building": "yes",
-        "name": "Нови Сад Ранжирна",
-        "name:sr": "Нови Сад Ранжирна",
-        "name:sr-Latn": "Novi Sad Ranžirna",
-        "public_transport": "station",
-        "railway": "station",
-        "train": "yes",
-        "@geometry": "center"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.8127683,
-          45.2709504
-        ]
-      },
-      "id": "way/144890124"
     },
     {
       "type": "Feature",
@@ -4549,8 +4576,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.2888104,
-          47.6490822
+          19.2887777,
+          47.6490786
         ]
       },
       "id": "node/245485226"
@@ -4761,6 +4788,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Ostffyasszonyfa",
+        "railway:ref": "OF",
         "ref:mav": "2886",
         "uic_ref": "5502204"
       },
@@ -4847,6 +4875,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Hajdúszoboszló",
+        "railway:ref": "SB",
         "ref:mav": "1699",
         "uic_ref": "5513888",
         "wheelchair": "yes"
@@ -4921,6 +4950,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Nyírbogdány",
+        "railway:ref": "ND",
         "ref:mav": "1714",
         "uic_ref": "5514050"
       },
@@ -4943,6 +4973,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Záhony",
+        "railway:ref": "ZN",
         "ref:mav": "1726",
         "uic_ref": "5514175"
       },
@@ -5008,6 +5039,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Pátroha",
+        "railway:ref": "PT",
         "railway:track_ref": "2",
         "ref:mav": "1718",
         "uic_ref": "5514092"
@@ -5164,7 +5196,6 @@
         "@id": "node/268596615",
         "name": "Mátraszőlős-Hasznos",
         "operator": "MÁV",
-        "public_transport": "stop_position",
         "railway": "halt",
         "ref:mav": "979",
         "train": "yes",
@@ -5173,8 +5204,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.7069006,
-          47.9389698
+          19.7068713,
+          47.9389853
         ]
       },
       "id": "node/268596615"
@@ -5560,7 +5591,9 @@
         "railway": "halt",
         "railway:name:VPE": "Gyöngyösfalu mh.",
         "ref:mav": "65445",
-        "uic_ref": "5505512"
+        "uic_ref": "5505512",
+        "wikidata": "Q22117632",
+        "wikipedia": "hu:Gyöngyösfalu megállóhely"
       },
       "geometry": {
         "type": "Point",
@@ -5640,6 +5673,7 @@
         "operator": "GYSEV",
         "railway": "halt",
         "railway:name:VPE": "Rábapatona mh.",
+        "railway:ref": "RBP",
         "ref:mav": "788",
         "uic_ref": "5502527",
         "wheelchair": "no"
@@ -5934,6 +5968,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Kóny",
+        "railway:ref": "KO",
         "ref:mav": "790",
         "uic_ref": "5502543",
         "wheelchair": "yes"
@@ -6740,19 +6775,22 @@
       "type": "Feature",
       "properties": {
         "@id": "way/313086695",
+        "addr:housenumber": "1",
+        "addr:street": "Заселак Прскавац",
         "building": "train_station",
         "disused:railway": "halt",
         "int_name": "Valjevski Gradac",
         "name": "Ваљевски Градац",
         "name:sr": "Ваљевски Градац",
         "name:sr-Latn": "Valjevski Gradac",
+        "ref:RS:kucni_broj": "5605122",
         "@geometry": "center"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.8615634,
-          44.2290389
+          19.861545,
+          44.2289871
         ]
       },
       "id": "way/313086695"
@@ -7976,9 +8014,8 @@
         "addr:postcode": "3121",
         "addr:street": "Somosi út",
         "name": "Somoskőújfalu",
-        "network": "MÁV-START",
         "operator": "MÁV",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "railway:ref": "SO",
         "ref:mav": "1765",
@@ -7992,8 +8029,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.8157076,
-          48.1551893
+          19.8156171,
+          48.1552049
         ]
       },
       "id": "node/344999320"
@@ -8172,8 +8209,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.7326489,
-          46.2360923
+          20.7327033,
+          46.236087
         ]
       },
       "id": "node/347353698"
@@ -8770,8 +8807,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.654589,
-          47.6578328
+          20.6541168,
+          47.6579696
         ]
       },
       "id": "node/367073676"
@@ -10635,7 +10672,6 @@
       "type": "Feature",
       "properties": {
         "@id": "node/415605642",
-        "is_in": "Dombos",
         "name": "Dombostanya",
         "operator": "MÁV",
         "railway": "halt",
@@ -11391,8 +11427,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.5076139,
-          43.7925424
+          19.5080566,
+          43.7926624
         ]
       },
       "id": "node/454501320"
@@ -11444,6 +11480,7 @@
         "operator": "MÁV",
         "railway": "yard",
         "railway:name:VPE": "Celldömölk-Rendező",
+        "railway:ref": "CR",
         "uic_ref": "5543646"
       },
       "geometry": {
@@ -11578,6 +11615,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Sárszentmihály",
+        "railway:ref": "ZF",
         "train": "yes",
         "uic_ref": "5503848"
       },
@@ -11844,6 +11882,24 @@
         ]
       },
       "id": "node/470378625"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/471626133",
+        "name": "Čapljina",
+        "name:sr": "Чапљина",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.6978,
+          43.1098495
+        ]
+      },
+      "id": "node/471626133"
     },
     {
       "type": "Feature",
@@ -13094,6 +13150,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Apafa",
+        "railway:ref": "AA",
         "ref:mav": "1703",
         "uic_ref": "5513938",
         "wikidata": "Q22054780"
@@ -13727,6 +13784,7 @@
         "railway:name:VPE": "Szarvas",
         "railway:ref": "VR",
         "ref:mav": "7235",
+        "start_date": "1880-05-01",
         "uic_ref": "5518259"
       },
       "geometry": {
@@ -14043,8 +14101,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.3063177,
-          47.6092294
+          20.3062908,
+          47.6092311
         ]
       },
       "id": "node/503340099"
@@ -14065,8 +14123,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.3901647,
-          47.5471402
+          20.3901455,
+          47.5471215
         ]
       },
       "id": "node/503340112"
@@ -14204,11 +14262,16 @@
       "type": "Feature",
       "properties": {
         "@id": "node/506539304",
-        "disused:railway": "station",
         "name": "Zalaszentgrót",
         "operator": "MÁV",
+        "public_transport": "station",
+        "railway": "station",
         "railway:name:VPE": "Zalaszentgrót",
-        "uic_ref": "5504721"
+        "railway:ref": "ZG",
+        "train": "yes",
+        "uic_ref": "5504721",
+        "wikidata": "Q92021158",
+        "wikipedia": "hu:Zalaszentgrót vasútállomás"
       },
       "geometry": {
         "type": "Point",
@@ -14376,8 +14439,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.0382141,
-          46.7570174
+          21.0381363,
+          46.7569862
         ]
       },
       "id": "node/507098079"
@@ -16041,6 +16104,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Fertőboz",
+        "railway:ref": "FB",
         "ref:mav": "802",
         "uic_ref": "5502709",
         "wikidata": "Q21890498"
@@ -16365,25 +16429,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/710520414",
-        "building": "train_station",
-        "name": "Čapljina",
-        "public_transport": "station",
-        "railway": "station",
-        "@geometry": "center"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          17.6980807,
-          43.109809
-        ]
-      },
-      "id": "way/710520414"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/718020223",
         "building": "train_station",
         "disused:railway": "station",
@@ -16422,14 +16467,14 @@
         "@id": "node/748766808",
         "alt_name": "Budapest-Déli pályaudvar",
         "alt_name:de": "Budapest-Südbahnhof",
+        "alt_name:en": "Budapest Deli Station",
         "loc_name": "Déli pályaudvar",
         "name": "Budapest-Déli",
-        "name:en": "Budapest Deli Station",
         "operator": "MÁV",
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Budapest-Déli",
-        "railway:ref": "B",
+        "railway:ref": "DP",
         "railway:ref:DB": "XMBD",
         "ref:ibnr": "5500007",
         "start_date": "1861-04-01",
@@ -16516,7 +16561,9 @@
         "railway": "halt",
         "railway:name:VPE": "Gencsapáti alsó mh.",
         "ref:mav": "65444",
-        "uic_ref": "5505504"
+        "uic_ref": "5505504",
+        "wikidata": "Q22117634",
+        "wikipedia": "hu:Gencsapáti alsó megállóhely"
       },
       "geometry": {
         "type": "Point",
@@ -16603,6 +16650,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Sárvár",
+        "railway:ref": "SR",
         "ref:mav": "2887",
         "uic_ref": "5502212"
       },
@@ -16915,6 +16963,7 @@
         "name": "Стара железничка станица",
         "name:sr": "Стара железничка станица",
         "name:sr-Latn": "Stara železnička stanica",
+        "ref:RS:kucni_broj": "4443388",
         "@geometry": "center"
       },
       "geometry": {
@@ -16940,6 +16989,7 @@
         "name:en": "Apatin",
         "name:sr": "Апатин",
         "name:sr-Latn": "Apatin",
+        "ref:RS:kucni_broj": "4338867",
         "@geometry": "center"
       },
       "geometry": {
@@ -17833,7 +17883,8 @@
         "operator": "Железнице Србије",
         "public_transport": "station",
         "railway": "station",
-        "ref:ibnr": "7200739"
+        "ref:ibnr": "7200739",
+        "wikidata": "Q11748506"
       },
       "geometry": {
         "type": "Point",
@@ -18616,7 +18667,9 @@
         "railway": "halt",
         "railway:name:VPE": "Gencsapáti felső mh.",
         "ref:mav": "65432",
-        "uic_ref": "5545989"
+        "uic_ref": "5545989",
+        "wikidata": "Q22117635",
+        "wikipedia": "hu:Gencsapáti felső megállóhely"
       },
       "geometry": {
         "type": "Point",
@@ -18765,6 +18818,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Ebes",
+        "railway:ref": "Z",
         "ref:mav": "1700",
         "train": "yes",
         "uic_ref": "5513896"
@@ -18937,6 +18991,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Szentgál",
+        "railway:ref": "G",
         "ref:mav": "1640",
         "train": "yes",
         "uic_ref": "5503962"
@@ -19376,6 +19431,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Herend",
+        "railway:ref": "HE",
         "ref:mav": "1639",
         "uic_ref": "5503954"
       },
@@ -19418,6 +19474,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Kerta",
+        "railway:ref": "K",
         "ref:mav": "1650",
         "uic_ref": "5504085"
       },
@@ -19810,6 +19867,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Kapuvár",
+        "railway:ref": "KA",
         "ref:mav": "797",
         "uic_ref": "5502626"
       },
@@ -21036,6 +21094,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Tüskevár",
+        "railway:ref": "TU",
         "ref:mav": "1648",
         "uic_ref": "5504069"
       },
@@ -21675,7 +21734,6 @@
         "@id": "node/1065130362",
         "name": "Mátraverebély",
         "operator": "MÁV",
-        "public_transport": "stop_position",
         "railway": "halt",
         "ref:mav": "981",
         "train": "yes",
@@ -21684,8 +21742,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.780207,
-          47.9684662
+          19.7802036,
+          47.968477
         ]
       },
       "id": "node/1065130362"
@@ -22868,7 +22926,9 @@
         "railway": "halt",
         "railway:name:VPE": "Középmező mh.",
         "ref:mav": "2020",
-        "uic_ref": "5547555"
+        "uic_ref": "5547555",
+        "wikidata": "Q22002390",
+        "wikipedia": "hu:Középmező megállóhely"
       },
       "geometry": {
         "type": "Point",
@@ -23039,6 +23099,7 @@
         "railway:name:VPE": "Jászapáti",
         "ref:mav": "1775",
         "uic_ref": "5512039",
+        "wheelchair": "limited",
         "wikidata": "Q22039381",
         "wikipedia": "hu:Jászapáti vasútállomás"
       },
@@ -23228,6 +23289,7 @@
         "railway:name:VPE": "Békéscsaba",
         "railway:ref": "C",
         "ref:mav": "7216",
+        "start_date": "1858-10-25",
         "train": "yes",
         "uic_ref": "5518036",
         "wheelchair": "yes",
@@ -23771,13 +23833,21 @@
       "type": "Feature",
       "properties": {
         "@id": "node/1104399656",
+        "addr:city": "Örményes",
+        "addr:housenumber": "1",
+        "addr:postcode": "5222",
+        "addr:street": "Máv Állomás dűlő",
         "name": "Fegyvernek-Örményes",
         "operator": "MÁV",
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Fegyvernek-Örményes",
+        "railway:ref": "FK",
         "ref:mav": "1550",
+        "train": "yes",
         "uic_ref": "5513805",
+        "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/fegyvernek-ormenyes",
+        "wheelchair": "yes",
         "wikidata": "Q22053977",
         "wikipedia": "hu:Fegyvernek-Örményes vasútállomás"
       },
@@ -23789,6 +23859,26 @@
         ]
       },
       "id": "node/1104399656"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1107944068",
+        "abandoned:railway": "station",
+        "addr:housenumber": "30",
+        "addr:street": "Железничка",
+        "building": "yes",
+        "ref:RS:kucni_broj": "4367274",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.7875664,
+          45.1255525
+        ]
+      },
+      "id": "way/1107944068"
     },
     {
       "type": "Feature",
@@ -24270,6 +24360,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Petőháza",
+        "railway:ref": "PH",
         "ref:mav": "799",
         "uic_ref": "5502659"
       },
@@ -24341,6 +24432,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Pinnye",
+        "railway:ref": "PI",
         "ref:mav": "801",
         "uic_ref": "5502683"
       },
@@ -24498,6 +24590,39 @@
         ]
       },
       "id": "node/1212434344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1212434390",
+        "addr:city": "Salgótarján",
+        "addr:housenumber": "20",
+        "addr:postcode": "3104",
+        "addr:street": "Szabó Ervin utca",
+        "addr:suburb": "Zagyvapálfalva",
+        "air_conditioning": "no",
+        "internet_access": "no",
+        "name": "Zagyvapálfalva",
+        "operator": "MÁV",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "ZP",
+        "ref:mav": "1621",
+        "train": "yes",
+        "uic_ref": "5511882",
+        "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/zagyvapalfalva",
+        "wheelchair": "no",
+        "wikidata": "Q22071289",
+        "wikipedia": "hu:Zagyvapálfalva vasútállomás"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.784993,
+          48.0675509
+        ]
+      },
+      "id": "node/1212434390"
     },
     {
       "type": "Feature",
@@ -24810,6 +24935,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Rábatamási",
+        "railway:ref": "RA",
         "ref:mav": "794",
         "uic_ref": "5502592"
       },
@@ -24830,6 +24956,7 @@
         "operator": "GYSEV",
         "railway": "halt",
         "railway:name:VPE": "Farád mh.",
+        "railway:ref": "FRD",
         "ref:mav": "793",
         "uic_ref": "5502584"
       },
@@ -25965,15 +26092,8 @@
       "type": "Feature",
       "properties": {
         "@id": "way/1266472328",
+        "area:railway": "station",
         "landuse": "railway",
-        "name": "Kimle-Károlyháza",
-        "operator": "MÁV",
-        "public_transport": "station",
-        "railway": "station",
-        "railway:name:VPE": "Kimle - Károlyháza",
-        "ref:mav": "3664",
-        "train": "yes",
-        "uic_ref": "5501339",
         "@geometry": "center"
       },
       "geometry": {
@@ -26305,6 +26425,24 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "way/1347703803",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.8212361,
+          46.9271063
+        ]
+      },
+      "id": "way/1347703803"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/1349261380",
         "name": "Bosanska Krupa",
         "railway": "station"
@@ -26587,8 +26725,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.5421702,
-          43.8298885
+          19.5423312,
+          43.8299777
         ]
       },
       "id": "node/1419586643"
@@ -26792,13 +26930,9 @@
       "type": "Feature",
       "properties": {
         "@id": "node/1430378581",
-        "addr:city": "Šid",
-        "addr:housenumber": "bb",
-        "addr:postcode": "22240",
-        "addr:street": "Јанка Веселиновића",
         "internet_access": "yes",
         "internet_access:fee": "no",
-        "name": "Stanica Šid",
+        "name": "Шид",
         "name:bs": "Šid",
         "name:de": "Schid",
         "name:en": "Šid",
@@ -31842,7 +31976,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6489599,
+          19.6489519,
           45.7457749
         ]
       },
@@ -33933,6 +34067,7 @@
         "name:sq": "Sllatina e Ibrit",
         "name:sr": "Ибарска Слатина",
         "name:sr-Latn": "Ibarska Slatina",
+        "public_transport": "station",
         "railway": "station"
       },
       "geometry": {
@@ -35224,7 +35359,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/1846530089",
-        "description": "Altitude 363 m",
+        "ele": "363",
         "name": "Ostrog",
         "name:sr": "Острог",
         "public_transport": "station",
@@ -35750,8 +35885,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.2013161,
-          42.513412
+          19.2015698,
+          42.5134587
         ]
       },
       "id": "node/1947214421"
@@ -35771,8 +35906,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.1136714,
-          42.5592794
+          19.1137443,
+          42.5593826
         ]
       },
       "id": "node/1947214538"
@@ -36123,6 +36258,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Enese",
+        "railway:ref": "EN",
         "ref:mav": "789",
         "uic_ref": "5502535",
         "wheelchair": "no"
@@ -36247,15 +36383,15 @@
         "name": "Ljutotuk",
         "name:sr": "Љутотук",
         "public_transport": "station",
-        "railway": "station",
+        "railway": "halt",
         "ref:ibnr": "6231110",
         "wikidata": "Q111992806"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.1582872,
-          42.550492
+          19.1581995,
+          42.5504154
         ]
       },
       "id": "node/2043767874"
@@ -36267,15 +36403,15 @@
         "name": "Slap",
         "name:sr": "Слап",
         "public_transport": "station",
-        "railway": "station",
+        "railway": "halt",
         "ref:ibnr": "6231107",
         "wikidata": "Q111992775"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0887961,
-          42.604294
+          19.0888114,
+          42.6041953
         ]
       },
       "id": "node/2043768820"
@@ -36288,15 +36424,15 @@
         "name": "Šumanovića Bare",
         "name:sr": "Шумановића Баре",
         "public_transport": "station",
-        "railway": "station",
+        "railway": "halt",
         "ref:ibnr": "6231106",
         "wikidata": "Q111992738"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0780358,
-          42.6193133
+          19.0780194,
+          42.6193138
         ]
       },
       "id": "node/2043769759"
@@ -36305,19 +36441,19 @@
       "type": "Feature",
       "properties": {
         "@id": "node/2043771030",
-        "description": "Altitude=295 m",
+        "ele": "295",
         "name": "Šobajići",
         "name:sr": "Шобајићи",
         "public_transport": "station",
-        "railway": "station",
+        "railway": "halt",
         "ref:ibnr": "6231105",
         "wikidata": "Q111992710"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.061556,
-          42.632372
+          19.0615564,
+          42.6323018
         ]
       },
       "id": "node/2043771030"
@@ -36326,21 +36462,21 @@
       "type": "Feature",
       "properties": {
         "@id": "node/2043771859",
-        "description": "Altitude 430 m",
+        "ele": "430",
         "name": "Dabovići",
         "name:en": "Dabovichi",
         "name:ru": "Дабовичи",
         "name:sr": "Дабовићи",
         "public_transport": "station",
-        "railway": "station",
+        "railway": "halt",
         "ref:ibnr": "6231103",
         "wikidata": "Q111988496"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0170399,
-          42.6759385
+          19.0170765,
+          42.6759422
         ]
       },
       "id": "node/2043771859"
@@ -36349,19 +36485,19 @@
       "type": "Feature",
       "properties": {
         "@id": "node/2043774728",
-        "description": "Altitude 535 m",
+        "ele": "535",
         "name": "Stubica",
         "name:sr": "Стубица",
         "public_transport": "station",
-        "railway": "station",
+        "railway": "halt",
         "ref:ibnr": "6231102",
         "wikidata": "Q111988485"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.971023,
-          42.7042569
+          18.9710949,
+          42.7042009
         ]
       },
       "id": "node/2043774728"
@@ -37602,13 +37738,14 @@
         "railway": "halt",
         "railway:name:VPE": "Pitvaros mh.",
         "ref:mav": "7246",
+        "start_date": "2006",
         "uic_ref": "5518390"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.7535247,
-          46.3235357
+          20.7462824,
+          46.3263385
         ]
       },
       "id": "node/2397311968"
@@ -38538,7 +38675,6 @@
       "properties": {
         "@id": "node/2810349360",
         "disused:railway": "station",
-        "is_in": "Drinó; Csarnavölgy; Börzsöny; Perőcsény; Szobi járás; Pest megye; HU",
         "name": "Drinó",
         "network": "Kemencei Erdei Múzeumvasút",
         "operator": "Kemencei Erdei Vasút",
@@ -38583,6 +38719,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Öttevény",
+        "railway:ref": "OT",
         "ref:mav": "3662",
         "uic_ref": "5501313"
       },
@@ -40001,6 +40138,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Kaba",
+        "railway:ref": "K",
         "ref:mav": "1698",
         "train": "yes",
         "uic_ref": "5513870"
@@ -40688,6 +40826,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Demecser",
+        "railway:ref": "DM",
         "ref:mav": "1716",
         "uic_ref": "5514076",
         "wikidata": "Q22054864",
@@ -40815,6 +40954,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Kisvárda",
+        "railway:ref": "KV",
         "ref:mav": "1720",
         "uic_ref": "5514118",
         "wheelchair": "yes"
@@ -40964,7 +41104,6 @@
         "@id": "node/3781212970",
         "description": "Ideiglenes végállomás volt 2003-tól 2009-ig",
         "disused:railway": "halt",
-        "is_in": "Csarna-völgy;Börzsöny;Kemence;Szobi járás;Pest megye;HU",
         "name": "Pityur-rétje",
         "network": "Kemencei Erdei Múzeumvasút",
         "operator": "Kemencei Erdei Vasút",
@@ -41060,7 +41199,6 @@
       "properties": {
         "@id": "node/3800402233",
         "disused:railway": "halt",
-        "is_in": "Hamuház; Csarnavölgy; Börzsöny; Perőcsény; Szobi járás; Pest megye; HU",
         "name": "Hamuház",
         "network": "Kemencei Erdei Múzeumvasút",
         "operator": "Kemencei Erdei Vasút",
@@ -41203,14 +41341,16 @@
         "name:hu": "Ferenchalom",
         "name:sr": "Качарево",
         "name:sr-Latn": "Kačarevo",
-        "railway": "yard",
-        "ref:ibnr": "7222003"
+        "public_transport": "station",
+        "railway": "station",
+        "ref:ibnr": "7222003",
+        "train": "yes"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.6890297,
-          44.9650592
+          20.6890428,
+          44.9650552
         ]
       },
       "id": "node/3819814681"
@@ -41517,6 +41657,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Tata",
+        "railway:ref": "TV",
         "ref:mav": "3652",
         "train": "yes",
         "uic_ref": "5501164",
@@ -41659,6 +41800,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Sóstóhegy",
+        "railway:ref": "SO",
         "ref:mav": "1712",
         "uic_ref": "5514035"
       },
@@ -41680,6 +41822,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Császárszállás",
+        "railway:ref": "CA",
         "uic_ref": "5513995"
       },
       "geometry": {
@@ -41700,6 +41843,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Újfehértó",
+        "railway:ref": "UF",
         "ref:mav": "1708",
         "uic_ref": "5513987"
       },
@@ -41859,7 +42003,7 @@
         "name": "Szurdokpüspöki",
         "name:ru": "Сурдокпюшпёки",
         "operator": "MÁV",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "railway:ref": "SZP",
         "ref:mav": "973",
@@ -41869,8 +42013,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6903455,
-          47.8516922
+          19.6903034,
+          47.8515148
         ]
       },
       "id": "node/4223433116"
@@ -41887,7 +42031,7 @@
         "internet_access": "no",
         "name": "Tar",
         "operator": "MÁV",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "railway:ref": "TR",
         "ref:mav": "980",
@@ -41901,8 +42045,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.7462971,
-          47.956084
+          19.7460329,
+          47.9559906
         ]
       },
       "id": "node/4223465273"
@@ -42315,6 +42459,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Celldömölk",
+        "railway:ref": "CE",
         "ref:mav": "2883",
         "train": "yes",
         "uic_ref": "5502170"
@@ -42361,6 +42506,7 @@
         "operator": "GYSEV",
         "railway": "yard",
         "railway:name:VPE": "Sopron-Rendező",
+        "railway:ref": "SPR",
         "uic_ref": "5548025"
       },
       "geometry": {
@@ -43783,11 +43929,10 @@
         "public_transport": "station",
         "railway": "station",
         "railway:ref": "M",
-        "ref:bkk": "056222",
+        "ref:bkk": "056221;056222",
         "station": "subway",
         "subway": "yes",
         "train": "yes",
-        "url": "http://mek.hu/?link=Epitesz_Kozlony___Muhely__2014_szeptember",
         "wheelchair": "yes",
         "wikidata": "Q930433"
       },
@@ -44030,8 +44175,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0614379,
-          47.494731
+          19.0616594,
+          47.4947838
         ]
       },
       "id": "node/5217774795"
@@ -44126,13 +44271,14 @@
         "station": "subway",
         "subway": "yes",
         "wheelchair": "no",
-        "wikidata": "Q2533009"
+        "wikidata": "Q2533009",
+        "wikipedia": "hu:Széll Kálmán tér metróállomás"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.0263255,
-          47.5077151
+          19.0263013,
+          47.5077259
         ]
       },
       "id": "node/5217774799"
@@ -44222,7 +44368,6 @@
         "operator": "BKV",
         "public_transport": "station",
         "railway": "station",
-        "ref:bkk": "F02681",
         "station": "subway",
         "subway": "yes",
         "wheelchair": "yes",
@@ -44297,9 +44442,8 @@
         "air_conditioning": "no",
         "internet_access": "no",
         "name": "Salgótarján külső",
-        "network": "MÁV-START",
         "operator": "MÁV",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "railway:ref": "SA",
         "ref:mav": "985",
@@ -44313,8 +44457,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.791061,
-          48.0895142
+          19.7910348,
+          48.0895232
         ]
       },
       "id": "node/5237888497"
@@ -44325,7 +44469,7 @@
         "@id": "node/5258615751",
         "name": "Apc-Zagyvaszántó",
         "operator": "MÁV",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "railway:ref": "AZ",
         "train": "yes",
@@ -44334,8 +44478,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6681942,
-          47.7912087
+          19.6681732,
+          47.7913326
         ]
       },
       "id": "node/5258615751"
@@ -44346,7 +44490,7 @@
         "@id": "node/5258616617",
         "name": "Pásztó",
         "operator": "MÁV",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "railway:ref": "PA",
         "train": "yes",
@@ -44355,8 +44499,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6889178,
-          47.9188609
+          19.6888494,
+          47.9188622
         ]
       },
       "id": "node/5258616617"
@@ -44367,7 +44511,7 @@
         "@id": "node/5258670625",
         "name": "Selyp",
         "operator": "MÁV",
-        "public_transport": "stop_position",
+        "public_transport": "station",
         "railway": "station",
         "railway:ref": "SP",
         "train": "yes",
@@ -44376,8 +44520,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6709065,
-          47.7593846
+          19.6708821,
+          47.7593832
         ]
       },
       "id": "node/5258670625"
@@ -44429,7 +44573,6 @@
       "properties": {
         "@id": "node/5294720346",
         "name": "Kisterenye-Bányatelep",
-        "public_transport": "stop_position",
         "railway": "halt",
         "train": "yes",
         "uic_ref": "5511866"
@@ -44437,8 +44580,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.8306948,
-          48.0235577
+          19.8307041,
+          48.0235874
         ]
       },
       "id": "node/5294720346"
@@ -44611,6 +44754,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Ács",
+        "railway:ref": "A",
         "ref:mav": "3657",
         "uic_ref": "5501230",
         "wheelchair": "no"
@@ -44748,6 +44892,7 @@
         "operator": "MÁV",
         "railway": "yard",
         "railway:name:VPE": "Záhony-Rendező",
+        "railway:ref": "ZNR",
         "uic_ref": "5542077"
       },
       "geometry": {
@@ -46048,7 +46193,6 @@
       "type": "Feature",
       "properties": {
         "@id": "node/6140811391",
-        "addr:city": "Beograd",
         "alt_name": "Beograd Centar-Prokop",
         "alt_name:en": "Belgrade Centre",
         "int_name": "Beograd centar",
@@ -46349,8 +46493,7 @@
         "operator": "Erdei Vasútért Egyesület",
         "public_transport": "station",
         "railway": "station",
-        "train": "yes",
-        "website": "https://www.godollokisvasut.hu/"
+        "train": "yes"
       },
       "geometry": {
         "type": "Point",
@@ -47916,7 +48059,7 @@
         "name": "Szilasliget",
         "network": "H8",
         "operator": "MÁV-HÉV",
-        "public_transport": "station",
+        "public_transport": "stop_area",
         "railway": "halt",
         "railway:name:VPE": "Szilasliget",
         "railway:ref": "Sz",
@@ -48304,8 +48447,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.2716243,
-          47.5965411
+          19.2716675,
+          47.5965344
         ]
       },
       "id": "node/6607085806"
@@ -48647,7 +48790,6 @@
         "@id": "node/6721199877",
         "disused": "yes",
         "disused:railway": "halt",
-        "is_in": "Feketekút; Csarnavölgy; Börzsöny",
         "name": "Feketekút",
         "network": "Kemencei Erdei Múzeumvasút",
         "operator": "Kemencei Erdei Vasút",
@@ -49425,6 +49567,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Nagyszentjános",
+        "railway:ref": "NJ",
         "ref:mav": "3658",
         "train": "yes",
         "uic_ref": "5501248"
@@ -49636,6 +49779,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Vecsés",
+        "railway:ref": "V",
         "ref:mav": "902",
         "toilets:wheelchair": "no",
         "train": "yes",
@@ -49816,6 +49960,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Kemecse",
+        "railway:ref": "KE",
         "ref:mav": "1713",
         "uic_ref": "5514043"
       },
@@ -49945,18 +50090,18 @@
         "addr:postcode": "2183",
         "addr:street": "Vasút utca",
         "building": "yes",
+        "contact:phone": "+36 1 349 4949",
+        "contact:website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/galgamacsa",
         "internet_access": "no",
         "name": "Galgamácsa",
         "network": "MÁV-START",
         "operator": "MÁV",
-        "phone": "+36 40 494 949",
         "public_transport": "station",
         "railway": "station",
         "railway:ref": "GM",
         "ref:mav": "329",
         "train": "yes",
         "uic_ref": "5510827",
-        "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/galgamacsa",
         "wheelchair": "no",
         "wikidata": "Q22025880",
         "wikipedia": "hu:Galgamácsa vasútállomás"
@@ -50393,8 +50538,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.1052384,
-          47.4231986
+          19.1052269,
+          47.4231527
         ]
       },
       "id": "node/7251538928"
@@ -52292,7 +52437,7 @@
         "loc_name:sr": "код Вука",
         "loc_name:sr-Latn": "kod Vuka",
         "name": "Вуков споменик",
-        "name:ru": "Памятник Вуку",
+        "name:ru": "Вуков споменик",
         "name:sr": "Вуков споменик",
         "name:sr-Latn": "Vukov spomenik",
         "network": "БГ:Воз",
@@ -52398,15 +52543,15 @@
       "properties": {
         "@id": "node/7840786234",
         "abandoned:railway": "halt",
+        "alt_name": "Barcstelep mrh.",
         "historic:railway": "halt",
-        "name": "Barcstelep",
-        "note": "mrh."
+        "name": "Barcstelep"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.4528718,
-          45.9569853
+          17.4539434,
+          45.9566084
         ]
       },
       "id": "node/7840786234"
@@ -52761,28 +52906,6 @@
         ]
       },
       "id": "node/7874772032"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/7903265802",
-        "fixme": "position",
-        "name": "Selyp",
-        "operator": "MÁV",
-        "public_transport": "stop_position",
-        "railway": "station",
-        "railway:ref": "SP",
-        "train": "yes",
-        "uic_ref": "5511759"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.6708144,
-          47.759378
-        ]
-      },
-      "id": "node/7903265802"
     },
     {
       "type": "Feature",
@@ -53566,7 +53689,8 @@
       "type": "Feature",
       "properties": {
         "@id": "node/8399367686",
-        "name": "Macs",
+        "name": "Nagymacs",
+        "old_name": "Macs",
         "operator": "MÁV",
         "public_transport": "station",
         "railway": "station",
@@ -53574,7 +53698,7 @@
         "train": "yes",
         "uic_ref": "5514480",
         "wikidata": "Q114985144",
-        "wikipedia": "hu:Macs megállóhely"
+        "wikipedia": "hu:Nagymacs vasútállomás"
       },
       "geometry": {
         "type": "Point",
@@ -53652,13 +53776,14 @@
         "@id": "node/8406757171",
         "addr:city": "Budapest",
         "addr:housenumber": "44",
-        "addr:postcode": "1184",
+        "addr:postcode": "1183",
         "addr:street": "Jegenye fasor",
         "name": "Pestszentlőrinc",
         "operator": "MÁV",
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Pestszentlőrinc",
+        "railway:ref": "PL",
         "ref:mav": "282",
         "train": "yes",
         "uic_ref": "5510181",
@@ -54360,7 +54485,8 @@
         "railway": "halt",
         "railway:name:VPE": "Szárazrét mh.",
         "train": "yes",
-        "uic_ref": "5503665"
+        "uic_ref": "5503665",
+        "wikidata": "Q102143778"
       },
       "geometry": {
         "type": "Point",
@@ -55298,6 +55424,7 @@
         "public_transport": "station",
         "railway": "station",
         "railway:name:VPE": "Üllő",
+        "railway:ref": "UL",
         "train": "yes",
         "uic_ref": "5513649"
       },
@@ -58237,7 +58364,9 @@
         "railway": "station",
         "railway:name:VPE": "Gyömrő",
         "train": "yes",
-        "uic_ref": "5511577"
+        "uic_ref": "5511577",
+        "wikidata": "Q21924521",
+        "wikipedia": "hu:Gyömrő vasútállomás"
       },
       "geometry": {
         "type": "Point",
@@ -59356,8 +59485,10 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9767449803",
-        "name": "Vrbas Nova",
-        "note": "Future new Vrbas railway station",
+        "int_name": "Vrbas Nova",
+        "name": "Врбас Нова",
+        "name:sr": "Врбас Нова",
+        "name:sr-Latn": "Vrbas Nova",
         "public_transport": "station",
         "railway": "station",
         "train": "yes"
@@ -59365,8 +59496,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.6296896,
-          45.5534414
+          19.6293852,
+          45.5536358
         ]
       },
       "id": "node/9767449803"
@@ -59602,15 +59733,10 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9836553267",
-        "abandoned:railway": "halt",
-        "fixme": "Ez valójában a még korábbi Segesd VASÚTÁLLOMÁS volt, amely később megszűnt, ekkor a 800m-rel odébbi, egykori \"Máriakápolna-vásártér\" nevű megálló lett Segesd v.m., és maradt a 2009-es vonalbezárásig. http://vasutallomasok.hu/allomas.php?az=sege",
+        "abandoned:railway": "station",
         "name": "Segesd",
-        "operator": "MÁV",
-        "railway": "site",
-        "train": "no",
-        "uic_ref": "5508540",
-        "wikidata": "Q57315170",
-        "wikipedia": "hu:Segesd megállóhely"
+        "note": "Ez valójában a még korábbi Segesd VASÚTÁLLOMÁS volt, amely később megszűnt, ekkor a 800m-rel odébbi, egykori \"Máriakápolna-vásártér\" nevű megálló lett Segesd v.m., és maradt a 2009-es vonalbezárásig. http://vasutallomasok.hu/allomas.php?az=sege",
+        "train": "no"
       },
       "geometry": {
         "type": "Point",
@@ -61572,7 +61698,11 @@
         "railway:ref": "O",
         "ref:mav": "1145",
         "train": "yes",
-        "uic_ref": "5516824"
+        "uic_ref": "5516824",
+        "website": "https://www.mavcsoport.hu/mav-szemelyszallitas/belfoldi-utazas/vasutallomas/ocsa",
+        "wheelchair": "no",
+        "wikidata": "Q21876057",
+        "wikipedia": "hu:Ócsa vasútállomás"
       },
       "geometry": {
         "type": "Point",
@@ -61836,10 +61966,11 @@
       "type": "Feature",
       "properties": {
         "@id": "node/10223546795",
-        "name": "Debrecen-Kondoros",
+        "name": "Kondoroskert",
+        "old_name": "Debrecen-Kondoros",
         "operator": "MÁV",
         "railway": "halt",
-        "railway:name:VPE": "Debrecen-Kondoros mh.",
+        "railway:name:VPE": "Kondoroskert mh.",
         "train": "yes",
         "uic_ref": "5515131"
       },
@@ -66270,25 +66401,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/10784037303",
-        "fixme": "position",
-        "name": "Lőrinci",
-        "public_transport": "stop_position",
-        "railway": "halt",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.6738386,
-          47.738013
-        ]
-      },
-      "id": "node/10784037303"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/10786447639",
         "abandoned:railway": "station",
         "gauge:1882-10-04-1975-06-01": "760",
@@ -68690,9 +68802,9 @@
       "type": "Feature",
       "properties": {
         "@id": "node/11076206947",
-        "name": "Macs Ipari Park",
+        "name": "Macs",
+        "old_name": "Macs Ipari Park",
         "operator": "MÁV",
-        "proposed:name": "Macs",
         "railway": "yard",
         "uic_ref": "5514477",
         "wikidata": "Q118125500"
@@ -68711,12 +68823,12 @@
       "properties": {
         "@id": "node/11076206948",
         "internet_access": "no",
-        "name": "Macs Ipari Park",
+        "name": "Látókép",
+        "old_name": "Macs Ipari Park",
         "operator": "MÁV",
-        "proposed:name": "Látókép",
         "public_transport": "station",
         "railway": "halt",
-        "railway:name:VPE": "Macs Ipari Park mh.",
+        "railway:name:VPE": "Látókép mh.",
         "train": "yes",
         "uic_ref": "5514466",
         "website": "https://www.mavcsoport.hu/mav-start/belfoldi-utazas/vasutallomas/macs-ipari-park-mh",
@@ -69128,26 +69240,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/11332898068",
-        "int_name": "Vrbas Nova",
-        "name": "Врбас Нова",
-        "name:sr-Latn": "Vrbas Nova",
-        "public_transport": "station",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.6293361,
-          45.5536177
-        ]
-      },
-      "id": "node/11332898068"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/11336710606",
         "railway": "signal",
         "railway:signal:direction": "backward",
@@ -69206,25 +69298,6 @@
         ]
       },
       "id": "node/11351544750"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/11352403215",
-        "fixme": "position",
-        "name": "Lőrinci",
-        "public_transport": "stop_position",
-        "railway": "halt",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.6738066,
-          47.7380093
-        ]
-      },
-      "id": "node/11352403215"
     },
     {
       "type": "Feature",
@@ -69484,9 +69557,13 @@
       "properties": {
         "@id": "node/11710744140",
         "abandoned:railway": "halt",
-        "name": "Segesd v. m.",
+        "name": "Segesd",
+        "old_name": "Máriakápolna-vásártér",
+        "operator": "MÁV",
         "railway": "site",
-        "train": "no"
+        "uic_ref": "5508540",
+        "wikidata": "Q57315170",
+        "wikipedia": "hu:Segesd megállóhely"
       },
       "geometry": {
         "type": "Point",
@@ -70189,8 +70266,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.2692715,
-          46.8831671
+          20.2693405,
+          46.8832018
         ]
       },
       "id": "node/11875973349"
@@ -70215,8 +70292,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.1921828,
-          47.9945549
+          17.1929192,
+          47.9943532
         ]
       },
       "id": "node/11876769768"
@@ -70234,7 +70311,7 @@
         "railway:name:VPE": "Hegyeshalom",
         "railway:position": "187.8",
         "railway:position:exact": "187.845",
-        "railway:ref": "HH",
+        "railway:ref": "SH",
         "railway:ref:ÖBB": "He",
         "ref:mav": "3667",
         "train": "yes",
@@ -70479,8 +70556,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.4169242,
-          44.8314354
+          20.4177148,
+          44.8314711
         ]
       },
       "id": "node/12119289174"
@@ -70562,15 +70639,13 @@
       "properties": {
         "@id": "node/12162376811",
         "name": "Dunaújváros kikötő",
-        "public_transport": "station",
-        "railway": "halt",
-        "train": "yes"
+        "railway": "yard"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.9458687,
-          46.9737812
+          18.9454739,
+          46.973749
         ]
       },
       "id": "node/12162376811"
@@ -70642,26 +70717,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/12297430623",
-        "int_name": "Vrbas Nova",
-        "name": "Врбас Нова",
-        "name:sr-Latn": "Vrbas Nova",
-        "public_transport": "station",
-        "railway": "station",
-        "train": "yes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.6294642,
-          45.553644
-        ]
-      },
-      "id": "node/12297430623"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/12337524529",
         "disused:railway": "halt",
         "name": "Bodajk felső",
@@ -70719,6 +70774,159 @@
         ]
       },
       "id": "node/12361607990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12388298614",
+        "int_name": "Novi Sad ranzirna",
+        "name": "Нови Сад rанжирна",
+        "name:sr": "Нови Сад ранжирна",
+        "name:sr-Latn": "Novi Sad ranžirna",
+        "railway": "yard",
+        "wikidata": "Q31183772",
+        "wikipedia": "sr:Железничка станица Нови Сад ранжирна"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8129733,
+          45.2710969
+        ]
+      },
+      "id": "node/12388298614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12439578647",
+        "int_name": "TPS Novi Sad",
+        "name": "ТПС Нови Сад",
+        "name:sr": "ТПС Нови Сад",
+        "name:sr-Latn": "TPS Novi Sad",
+        "railway": "halt",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.804703,
+          45.2745732
+        ]
+      },
+      "id": "node/12439578647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12439578661",
+        "entrance": "yes",
+        "railway": "train_station_entrance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8047934,
+          45.2742104
+        ]
+      },
+      "id": "node/12439578661"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12439578663",
+        "entrance": "yes",
+        "railway": "train_station_entrance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8049821,
+          45.2743135
+        ]
+      },
+      "id": "node/12439578663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12439578665",
+        "access": "no",
+        "entrance": "yes",
+        "railway": "train_station_entrance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8050876,
+          45.2743716
+        ]
+      },
+      "id": "node/12439578665"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12471822632",
+        "name": "Kimle-Károlyháza",
+        "operator": "MÁV",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:name:VPE": "Kimle - Károlyháza",
+        "railway:ref": "KE",
+        "ref:mav": "3664",
+        "train": "yes",
+        "uic_ref": "5501339"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.3421655,
+          47.8044408
+        ]
+      },
+      "id": "node/12471822632"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12480982353",
+        "disused:railway": "halt",
+        "end_date": "2006",
+        "name": "Pitvaros",
+        "operator": "MÁV",
+        "railway:name:VPE": "Pitvaros mh."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.7533398,
+          46.3234465
+        ]
+      },
+      "id": "node/12480982353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12504311865",
+        "int_name": "Barajevo centar",
+        "name": "Барајево центар",
+        "name:sr": "Барајево центар",
+        "name:sr-Latn": "Barajevo centar",
+        "public_transport": "stop_position",
+        "railway": "halt",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.4121206,
+          44.5772798
+        ]
+      },
+      "id": "node/12504311865"
     }
   ]
 }
