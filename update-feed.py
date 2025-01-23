@@ -266,7 +266,10 @@ for search_name in config["data"]["stations"]:
 
     # Try to fetch until hafas complains
     departures: List[Leg] = []
-    while True:
+
+    num_fetches = 0
+
+    while num_fetches < 15:
         try:
             args = dict(
                 station=best_found_location.id,
@@ -285,6 +288,9 @@ for search_name in config["data"]["stations"]:
             )
             departures = client.departures(**args)
             departures += client.arrivals(**args)
+
+            num_fetches += 1
+
             if not departures:
                 print("Stopping, because there are no departures / arrivals from the stop")
                 break
