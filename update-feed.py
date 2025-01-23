@@ -122,8 +122,11 @@ def station_name_matches(osm_station, name):
     return match
 
 
-def search_station(stations, stop):
+def search_station(stations, stop, cache={}):
     osm_stop = Stop()
+
+    if (stop.latitude, stop.longitude) in cache:
+        return cache[(stop.latitude, stop.longitude)]
 
     candidates = []
 
@@ -148,6 +151,8 @@ def search_station(stations, stop):
         osm_stop.lat = osm_node["geometry"]["coordinates"][1]
         osm_stop.lon = osm_node["geometry"]["coordinates"][0]
 
+        cache[(stop.latitude, stop.longitude)] = osm_stop
+
         return osm_stop
     else:
         print(
@@ -156,6 +161,9 @@ def search_station(stations, stop):
         osm_stop.name = stop.name
         osm_stop.lat = stop.latitude
         osm_stop.lon = stop.longitude
+
+        cache[(stop.latitude, stop.longitude)] = osm_stop
+
         return osm_stop
 
 
