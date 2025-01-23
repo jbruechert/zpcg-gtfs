@@ -183,6 +183,8 @@ def mode_to_route_type(mode, route_type: Optional[str]):
                     return 102
                 case "D":
                     return 102
+                case "IR":
+                    return 103
                 case None:
                     return 2
                 case _:
