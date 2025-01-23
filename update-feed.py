@@ -333,7 +333,7 @@ for search_name in config["data"]["stations"]:
                         service_id(trip.id),
                         sha256(trip.id.encode()).hexdigest(),
                         dest.name,
-                        trip_name,
+                        re.sub(r"\(.*\)", "", trip_name),
                         None,
                         None,
                         None,
