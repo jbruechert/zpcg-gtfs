@@ -26,6 +26,7 @@ update-srbijavoz-feed:
             - latest_timestamp_Požarevac.txt
             - latest_timestamp_Šabac.txt
             - latest_timestamp_Subotica.txt
+            - latest_timestamp_Zrenjanin.txt
     artifacts:
         paths:
             - rs_srbijavoz.gtfs.zip
